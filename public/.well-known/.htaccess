@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. Rediriger HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Rediriger non-www → www
+RewriteCond %{HTTP_HOST} ^sporttrackmerger\.com$ [NC]
+RewriteRule ^ https://www.sporttrackmerger.com%{REQUEST_URI} [L,R=301]
+
+# 3. Autoriser accès direct à index.html
+RewriteRule ^index\.html$ - [L]
+
+# 4. Laisser passer les fichiers existants (pages Astro générées)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 5. Apple AASA (si tu as un deeplink iOS)
+<FilesMatch "apple-app-site-association">
+    ForceType application/json
+</FilesMatch>
