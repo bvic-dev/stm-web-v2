@@ -1,0 +1,51 @@
+---
+import StravaLogo from "../../assets/strava.svg";
+import FacebookLogo from "../../assets/facebook.svg";
+import InstagramLogo from "../../assets/instagram.svg";
+import PoweredByStravaLogo from "../../assets/pwrdBy_strava.svg";
+import DiscordLogo from "../../assets/discord.svg";
+import SocialIcon from "./SocialIcon.astro";
+import FooterNavLink from "./FooterNavLink.astro";
+import { footerNavLinks } from "../../data/navLinks";
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { href: "https://www.strava.com/clubs/sporttrackmerger", icon: StravaLogo, ariaLabel: "Sport Track Merger on Strava" },
+  {
+    href: "https://www.facebook.com/profile.php?id=61576930135105",
+    icon: FacebookLogo,
+    ariaLabel: "Sport Track Merger on Facebook"
+  },
+  { href: "https://www.instagram.com/sporttrackmerger", icon: InstagramLogo, ariaLabel: "Sport Track Merger on Instagram" },
+  { href: "https://discord.gg/r7vmTP5sye", icon: DiscordLogo, ariaLabel: "Sport Track Merger on Discord" },
+];
+---
+
+<footer>
+  <div
+    class="flex flex-col-reverse lg:flex-row items-center justify-between p-3 gap-3 lg:gap-10 bg-gray-100 text-gray-700"
+  >
+    <p class="text-sm">
+      © {currentYear} Sport Track Merger - Tous droits réservés
+    </p>
+    <nav class="flex items-center gap-7 text-sm lg:text-base">
+      {
+        footerNavLinks.map((link) => (
+          <FooterNavLink href={link.href} label={link.label} />
+        ))
+      }
+    </nav>
+
+    <nav class="flex items-center gap-3">
+      {
+        socialLinks.map((link) => (
+          <SocialIcon href={link.href} icon={link.icon} size={30} ariaLabel={link.ariaLabel} />
+        ))
+      }
+      <span class="ps-3">
+        <PoweredByStravaLogo height={30} />
+      </span>
+    </nav>
+  </div>
+</footer>

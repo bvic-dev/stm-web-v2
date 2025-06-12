@@ -1,0 +1,7 @@
+---
+const { href, icon: Icon, size = 30, ariaLabel } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class="hover-zoom" aria-label={ariaLabel}>
+    <Icon height={size} />
+</a>
