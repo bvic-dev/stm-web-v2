@@ -1,0 +1,83 @@
+---
+import Logo from "../../assets/logo.svg";
+import MobileNavIcon from "../../assets/mobile-nav.svg";
+import CrossIcon from "../../assets/cross.svg";
+import HeaderNavLink from "./HeaderNavLink.astro";
+import { headerNavLinks } from "../../data/navLinks";
+
+const { currentPath } = Astro.props;
+---
+
+<header>
+  <div class="w-fullpx-2 p-2 sm:px-6 bg-gray-100 text-gray-700">
+    <div class="sm:hidden">
+      <div class="relative flex items-center">
+        <button
+          type="button"
+          class="cursor-pointer rounded-md p-2 hover:bg-gray-200"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <MobileNavIcon width={24} height={24} />
+          <CrossIcon width={24} height={24} class="hidden" />
+        </button>
+
+        <a
+          href="/"
+          class="hover-zoom absolute left-1/2 -translate-x-1/2 flex items-center gap-2"
+          aria-label="Sport Track Merger Logo"
+        >
+          <Logo width={40} height={40} />
+        </a>
+      </div>
+
+      <nav class="hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          {
+            headerNavLinks.map((link) => (
+              <HeaderNavLink
+                href={link.href}
+                label={link.label}
+                currentPath={currentPath}
+                className="block"
+              />
+            ))
+          }
+        </div>
+      </nav>
+    </div>
+    <nav class="hidden sm:block">
+      <div class="flex items-center gap-6">
+        <a href="/" class="hover-zoom" aria-label="Sport Track Merger Logo">
+          <Logo width={40} height={40} />
+        </a>
+        <div class="flex gap-4">
+          {
+            headerNavLinks.map((link) => (
+              <HeaderNavLink
+                href={link.href}
+                label={link.label}
+                currentPath={currentPath}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector('[aria-controls="mobile-menu"]');
+  const menu = document.getElementById("mobile-menu");
+  if (btn && menu) {
+    const [iconOpen, iconClose] = btn.querySelectorAll("svg");
+
+    btn.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("hidden");
+      iconOpen.classList.toggle("hidden");
+      iconClose.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", (!isOpen).toString());
+    });
+  }
+</script>
