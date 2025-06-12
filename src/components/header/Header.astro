@@ -23,7 +23,7 @@ const { currentPath } = Astro.props;
         </button>
 
         <a
-          href="/"
+          href={headerNavLinks[0].href}
           class="hover-zoom absolute left-1/2 -translate-x-1/2 flex items-center gap-2"
           aria-label="Sport Track Merger Logo"
         >
@@ -48,7 +48,11 @@ const { currentPath } = Astro.props;
     </div>
     <nav class="hidden sm:block">
       <div class="flex items-center gap-6">
-        <a href="/" class="hover-zoom" aria-label="Sport Track Merger Logo">
+        <a
+          href={headerNavLinks[0].href}
+          class="hover-zoom"
+          aria-label="Sport Track Merger Logo"
+        >
           <Logo width={40} height={40} />
         </a>
         <div class="flex gap-4">

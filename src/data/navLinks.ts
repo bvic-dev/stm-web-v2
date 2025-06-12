@@ -1,12 +1,12 @@
 export const headerNavLinks = [
-  { href: "/", label: "Sport Track Merger" },
-  { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/changelog", label: "Changelog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/stm-web-v2", label: "Sport Track Merger" },
+  { href: "/stm-web-v2/blog", label: "Blog" },
+  { href: "/stm-web-v2/faq", label: "FAQ" },
+  { href: "/stm-web-v2/changelog", label: "Changelog" },
+  { href: "/stm-web-v2/contact", label: "Contact" },
 ];
 
 export const footerNavLinks = [
-  { href: "/privacy", label: "Privacy" },
+  { href: "/stm-web-v2/privacy", label: "Privacy" },
   ...headerNavLinks.slice(1),
 ];
