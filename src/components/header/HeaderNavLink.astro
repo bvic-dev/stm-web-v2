@@ -1,11 +1,12 @@
 ---
 const { href, label, currentPath, className = "" } = Astro.props;
-const isActive = currentPath === href;
+const normalize = (path :String) => path !== "/" ? path.replace(/\/+$/, "") : path;
+const isActive = normalize(currentPath) === normalize(href);
 ---
 
 <a
   href={href}
-  class={`rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-200 ${isActive ? "bg-gray-300" : "bg-gray-100"} ${className}`}
+  class={`rounded-md px-3 py-2 text-sm font-medium ${isActive ? "bg-gray-300" : "bg-gray-100 hover:bg-gray-200 "} ${className}`}
   aria-current={isActive ? "page" : undefined}
 >
   {label}
