@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Sport Track Merger",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "changelog": "Changelog",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz"
+  },
+  "footer": {
+    "copyright": "© {year} Sport Track Merger - Alle Rechte vorbehalten"
+  },
+  "social": {
+    "strava": "Sport Track Merger auf Strava",
+    "facebook": "Sport Track Merger auf Facebook",
+    "instagram": "Sport Track Merger auf Instagram",
+    "discord": "Sport Track Merger auf Discord"
+  },
+  "home": {
+    "welcome": "Willkommen bei Sport Track Merger"
+  }
+}

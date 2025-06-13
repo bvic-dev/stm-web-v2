@@ -1,25 +1,27 @@
 ---
-import StravaLogo from "../../assets/strava.svg";
-import FacebookLogo from "../../assets/facebook.svg";
-import InstagramLogo from "../../assets/instagram.svg";
 import PoweredByStravaLogo from "../../assets/pwrdBy_strava.svg";
-import DiscordLogo from "../../assets/discord.svg";
 import SocialIcon from "./SocialIcon.astro";
 import FooterNavLink from "./FooterNavLink.astro";
-import { footerNavLinks } from "../../data/navLinks";
+import { footerNavRoutes } from "../../data/navLinks";
+import { socialNavRoutes } from "../../data/navLinks";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+// Props
+const { currentLocale } = Astro.props;
+
+const t = await import(`../../i18n/${currentLocale}.json`);
+const navRoutes = footerNavRoutes.map(({ key, href }) => ({
+  href: getRelativeLocaleUrl(currentLocale, href),
+  label: t.nav[key],
+}));
 
 const currentYear = new Date().getFullYear();
 
-const socialLinks = [
-  { href: "https://www.strava.com/clubs/sporttrackmerger", icon: StravaLogo, ariaLabel: "Sport Track Merger on Strava" },
-  {
-    href: "https://www.facebook.com/profile.php?id=61576930135105",
-    icon: FacebookLogo,
-    ariaLabel: "Sport Track Merger on Facebook"
-  },
-  { href: "https://www.instagram.com/sporttrackmerger", icon: InstagramLogo, ariaLabel: "Sport Track Merger on Instagram" },
-  { href: "https://discord.gg/r7vmTP5sye", icon: DiscordLogo, ariaLabel: "Sport Track Merger on Discord" },
-];
+const socialLinks = socialNavRoutes.map(({ key, href, icon }) => ({
+  href,
+  icon,
+  ariaLabel: t.social[key],
+}));
 ---
 
 <footer>
@@ -27,11 +29,11 @@ const socialLinks = [
     class="flex flex-col-reverse lg:flex-row items-center justify-between p-3 gap-3 lg:gap-10 bg-gray-100 text-gray-700"
   >
     <p class="text-sm">
-      © {currentYear} Sport Track Merger - Tous droits réservés
+      {t.footer.copyright.replace("{year}", currentYear.toString())}
     </p>
     <nav class="flex items-center gap-7 text-sm">
       {
-        footerNavLinks.map((link) => (
+        navRoutes.map((link) => (
           <FooterNavLink href={link.href} label={link.label} />
         ))
       }
@@ -40,7 +42,12 @@ const socialLinks = [
     <nav class="flex items-center gap-3">
       {
         socialLinks.map((link) => (
-          <SocialIcon href={link.href} icon={link.icon} size={30} ariaLabel={link.ariaLabel} />
+          <SocialIcon
+            href={link.href}
+            icon={link.icon}
+            size={30}
+            ariaLabel={link.ariaLabel}
+          />
         ))
       }
       <span class="ps-3">

@@ -3,9 +3,15 @@ import Logo from "../../assets/logo.svg";
 import MobileNavIcon from "../../assets/mobile-nav.svg";
 import CrossIcon from "../../assets/cross.svg";
 import HeaderNavLink from "./HeaderNavLink.astro";
-import { headerNavLinks } from "../../data/navLinks";
+import { headerNavRoutes } from "../../data/navLinks";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const { currentPath } = Astro.props;
+const { currentPath, currentLocale } = Astro.props;
+const translations = await import(`../../i18n/${currentLocale}.json`);
+const navRoutes = headerNavRoutes.map(({ key, href }) => ({
+  href: getRelativeLocaleUrl(currentLocale, href),
+  label: translations.nav[key],
+}));
 ---
 
 <header>
@@ -23,7 +29,7 @@ const { currentPath } = Astro.props;
         </button>
 
         <a
-          href={headerNavLinks[0].href}
+          href={navRoutes[0].href}
           class="hover-zoom absolute left-1/2 -translate-x-1/2 flex items-center gap-2"
           aria-label="Sport Track Merger Logo"
         >
@@ -34,7 +40,7 @@ const { currentPath } = Astro.props;
       <nav class="hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3">
           {
-            headerNavLinks.map((link) => (
+            navRoutes.map((link) => (
               <HeaderNavLink
                 href={link.href}
                 label={link.label}
@@ -49,7 +55,7 @@ const { currentPath } = Astro.props;
     <nav class="hidden sm:block">
       <div class="flex items-center gap-6">
         <a
-          href={headerNavLinks[0].href}
+          href={navRoutes[0].href}
           class="hover-zoom"
           aria-label="Sport Track Merger Logo"
         >
@@ -57,7 +63,7 @@ const { currentPath } = Astro.props;
         </a>
         <div class="flex gap-4">
           {
-            headerNavLinks.map((link) => (
+            navRoutes.map((link) => (
               <HeaderNavLink
                 href={link.href}
                 label={link.label}

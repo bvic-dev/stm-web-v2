@@ -2,23 +2,47 @@
 import "../styles/global.css";
 import Header from "../components/header/Header.astro";
 import Footer from "../components/footer/Footer.astro";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import { LOCALES, DEFAULT_LOCALE } from "../config.ts";
 
 const currentPath = Astro.url.pathname;
+const currentLocale = Astro.currentLocale;
+const routePattern = Astro.routePattern;
+
+const pathWithoutLocale = routePattern.replace(
+  new RegExp(`^/${currentLocale}(?:/|$)`),
+  ""
+);
+const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale;
 ---
 
-<html lang="fr">
+<html lang={currentLocale}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/stm-web-v2/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Sport Track Merger</title>
+    {
+      LOCALES.map((locale) => (
+        <link
+          rel="alternate"
+          hreflang={locale}
+          href={getAbsoluteLocaleUrl(locale, relativePath)}
+        />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={getAbsoluteLocaleUrl(DEFAULT_LOCALE, relativePath)}
+    />
   </head>
   <body class="min-h-screen flex flex-col">
-    <Header currentPath={currentPath} />
+    <Header currentPath={currentPath} currentLocale={currentLocale} />
     <main class="flex-1 overflow-auto">
       <slot />
     </main>
-    <Footer />
+    <Footer currentLocale={currentLocale} />
   </body>
 </html>
