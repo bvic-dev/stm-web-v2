@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { generateLangStaticPaths } from '../../utils/locale';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { generateLangStaticPaths } from '../../../utils/locale';
 
 export function getStaticPaths() {
   return generateLangStaticPaths();
@@ -9,6 +9,6 @@ export function getStaticPaths() {
 ---
 <BaseLayout>
   <p class="flex h-100 items-center justify-center text-4xl font-bold">
-    Contact
+    FAQ
   </p>
 </BaseLayout>

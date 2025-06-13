@@ -1,0 +1,25 @@
+---
+const { SITE_BASE, DEFAULT_LOCALE } = await import("../config.ts");
+
+interface Props {
+  path?: string;
+}
+
+const { path } = Astro.props;
+const redirectUrl = path
+  ? `${SITE_BASE}/${DEFAULT_LOCALE}/${path.replace(/^\/+/, "")}/`
+  : `${SITE_BASE}/${DEFAULT_LOCALE}/`;
+---
+
+<html lang={DEFAULT_LOCALE}>
+  <head>
+    <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={redirectUrl}>{redirectUrl}</a></p>
+  </body>
+</html>
+
+<script set:html={`window.location.replace("${redirectUrl}");`}></script>

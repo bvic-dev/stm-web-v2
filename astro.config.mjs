@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-const { LOCALES, DEFAULT_LOCALE, I18N_ROUTING, SITE_URL, SITE_BASE } = await import('./src/config.ts');
+const { LOCALES, DEFAULT_LOCALE, SITE_URL, SITE_BASE } = await import('./src/config.ts');
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -14,6 +14,9 @@ export default defineConfig({
   i18n: {
     locales: [...LOCALES],
     defaultLocale: DEFAULT_LOCALE,
-    routing: I18N_ROUTING
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
+    }
   }
 });
