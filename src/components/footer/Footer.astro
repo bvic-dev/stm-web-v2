@@ -24,35 +24,33 @@ const socialLinks = socialNavRoutes.map(({ key, href, icon }) => ({
 }));
 ---
 
-<footer>
-  <div
-    class="flex flex-col-reverse lg:flex-row items-center justify-between p-3 gap-3 lg:gap-10 bg-gray-100 text-gray-700"
-  >
-    <p class="text-sm">
-      {t.footer.copyright.replace("{year}", currentYear.toString())}
-    </p>
-    <nav class="flex items-center gap-7 text-sm">
-      {
-        navRoutes.map((link) => (
-          <FooterNavLink href={link.href} label={link.label} />
-        ))
-      }
-    </nav>
+<footer
+  class="footer flex flex-col-reverse lg:flex-row items-center justify-between p-3 gap-3 lg:gap-10 bg-neutral text-neutral-content"
+>
+  <p class="text-sm">
+    {t.footer.copyright.replace("{year}", currentYear.toString())}
+  </p>
+  <nav class="flex items-center gap-7 text-sm">
+    {
+      navRoutes.map((link) => (
+        <FooterNavLink href={link.href} label={link.label} />
+      ))
+    }
+  </nav>
 
-    <nav class="flex items-center gap-3">
-      {
-        socialLinks.map((link) => (
-          <SocialIcon
-            href={link.href}
-            icon={link.icon}
-            size={30}
-            ariaLabel={link.ariaLabel}
-          />
-        ))
-      }
-      <span class="ps-3">
-        <PoweredByStravaLogo height={30} />
-      </span>
-    </nav>
-  </div>
+  <nav class="flex items-center gap-3">
+    {
+      socialLinks.map((link) => (
+        <SocialIcon
+          href={link.href}
+          icon={link.icon}
+          size={30}
+          ariaLabel={link.ariaLabel}
+        />
+      ))
+    }
+    <span class="ps-3">
+      <PoweredByStravaLogo height={30} />
+    </span>
+  </nav>
 </footer>

@@ -15,12 +15,12 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
 ---
 
 <header>
-  <div class="w-fullpx-2 p-2 sm:px-6 bg-gray-100 text-gray-700">
+  <div class="w-fullpx-2 p-2 sm:px-6">
     <div class="sm:hidden">
       <div class="relative flex items-center">
         <button
           type="button"
-          class="cursor-pointer rounded-md p-2 hover:bg-gray-200"
+          class="btn btn-ghost rounded-md p-2"
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -45,7 +45,7 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
                 href={link.href}
                 label={link.label}
                 currentPath={currentPath}
-                className="block"
+                className="flex items-center justify-start"
               />
             ))
           }

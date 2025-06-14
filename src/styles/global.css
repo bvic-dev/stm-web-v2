@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@plugin "daisyui" {
+  themes: nord --default, dim --prefersdark;
+}
+
 .hover-zoom {
   @apply hover:opacity-90 transition-all duration-300 transform hover:scale-110;
 }
