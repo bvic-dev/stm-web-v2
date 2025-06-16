@@ -3,7 +3,7 @@ import Logo from "../../assets/logo.svg";
 import MobileNavIcon from "../../assets/mobile-nav.svg";
 import CrossIcon from "../../assets/cross.svg";
 import HeaderNavLink from "./HeaderNavLink.astro";
-import { headerNavRoutes } from "../../data/navLinks";
+import { headerNavRoutes, allNavRoutes } from "../../utils/navLinks";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import HeaderLanguageDropDown from "./HeaderLanguageDropDown.astro";
 import HeaderThemeDropDown from "./HeaderThemeDropDown.astro";
@@ -19,6 +19,8 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
   href: getRelativeLocaleUrl(currentLocale, href),
   label: translations.nav[key],
 }));
+
+const homeRoutePath = getRelativeLocaleUrl(currentLocale, allNavRoutes[0].href)
 ---
 
 <header class="shadow-sm">
@@ -36,7 +38,7 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
         </button>
 
         <a
-          href={navRoutes[0].href}
+          href={homeRoutePath}
           class="hover-zoom absolute left-1/2 -translate-x-1/2 flex items-center gap-2"
           aria-label="Sport Track Merger Logo"
         >
@@ -67,7 +69,7 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
       <div class="flex">
         <div class="flex-1 flex items-center gap-6">
           <a
-            href={navRoutes[0].href}
+            href={homeRoutePath}
             class="hover-zoom"
             aria-label="Sport Track Merger Logo"
           >
