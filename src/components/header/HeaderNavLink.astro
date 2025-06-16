@@ -1,6 +1,13 @@
 ---
+interface Props {
+  href: string;
+  label: string;
+  currentPath: string;
+  className?: string;
+}
+
 const { href, label, currentPath, className = "" } = Astro.props;
-const normalize = (path :String) => path !== "/" ? path.replace(/\/+$/, "") : path;
+const normalize = (path :string) => path !== "/" ? path.replace(/\/+$/, "") : path;
 const isActive = normalize(currentPath) === normalize(href);
 ---
 

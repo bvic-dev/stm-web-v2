@@ -5,6 +5,13 @@ import CrossIcon from "../../assets/cross.svg";
 import HeaderNavLink from "./HeaderNavLink.astro";
 import { headerNavRoutes } from "../../data/navLinks";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import HeaderLanguageDropDown from "./HeaderLanguageDropDown.astro";
+import HeaderThemeDropDown from "./HeaderThemeDropDown.astro";
+
+interface Props {
+  currentPath: string;
+  currentLocale: string;
+}
 
 const { currentPath, currentLocale } = Astro.props;
 const translations = await import(`../../i18n/${currentLocale}.json`);
@@ -14,9 +21,9 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
 }));
 ---
 
-<header>
-  <div class="w-fullpx-2 p-2 sm:px-6">
-    <div class="sm:hidden">
+<header class="shadow-sm">
+  <div class="w-fullpx-2 p-2 md:px-6">
+    <div class="md:hidden">
       <div class="relative flex items-center">
         <button
           type="button"
@@ -49,29 +56,37 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
               />
             ))
           }
+          <div class="flex items-center justify-end">
+            <HeaderThemeDropDown currentLocale={currentLocale} prefix="mobile" />
+            <HeaderLanguageDropDown />
+          </div>
         </div>
       </nav>
     </div>
-    <nav class="hidden sm:block">
-      <div class="flex items-center gap-6">
-        <a
-          href={navRoutes[0].href}
-          class="hover-zoom"
-          aria-label="Sport Track Merger Logo"
-        >
-          <Logo width={40} height={40} />
-        </a>
-        <div class="flex gap-4">
-          {
-            navRoutes.map((link) => (
-              <HeaderNavLink
-                href={link.href}
-                label={link.label}
-                currentPath={currentPath}
-              />
-            ))
-          }
+    <nav class="hidden md:block">
+      <div class="flex">
+        <div class="flex-1 flex items-center gap-6">
+          <a
+            href={navRoutes[0].href}
+            class="hover-zoom"
+            aria-label="Sport Track Merger Logo"
+          >
+            <Logo width={40} height={40} />
+          </a>
+          <div class="flex gap-4 sm:gap-1">
+            {
+              navRoutes.map((link) => (
+                <HeaderNavLink
+                  href={link.href}
+                  label={link.label}
+                  currentPath={currentPath}
+                />
+              ))
+            }
+          </div>
         </div>
+        <HeaderThemeDropDown currentLocale={currentLocale} prefix="desktop"/>
+        <HeaderLanguageDropDown />
       </div>
     </nav>
   </div>

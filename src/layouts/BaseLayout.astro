@@ -6,7 +6,7 @@ import { getAbsoluteLocaleUrl } from "astro:i18n";
 import { LOCALES, DEFAULT_LOCALE } from "../config.ts";
 
 const currentPath = Astro.url.pathname;
-const currentLocale = Astro.currentLocale;
+const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
 const routePattern = Astro.routePattern;
 
 const pathWithoutLocale = routePattern.replace(

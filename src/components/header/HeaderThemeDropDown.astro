@@ -1,0 +1,80 @@
+---
+import HeaderDropDown from "./HeaderDropDown.astro";
+import { themeKeys } from "../../utils/theme";
+
+interface Props {
+    currentLocale: string;
+    prefix: string;
+}
+
+const { currentLocale, prefix } = Astro.props;
+const translations = await import(`../../i18n/${currentLocale}.json`);
+
+const themeValues = translations.nav.themes.map(
+    (value: { label: string }, index: number) => ({
+        key: themeKeys[index].key,
+        label: value.label,
+    }),
+);
+---
+
+<HeaderDropDown title={translations.nav.theme}>
+    {
+        themeValues.map((value: { key: string; label: string }) => (
+            <li>
+                <a id={`${prefix}-dropdown-item-${value.key}`}>{value.label}</a>
+            </li>
+        ))
+    }
+</HeaderDropDown>
+
+<script>
+    const storedTheme = localStorage.getItem("theme");
+    if (typeof window !== "undefined") {
+        if (storedTheme === "auto") {
+            const prefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
+            const autoTheme = prefersDark ? "dim" : "nord";
+            document.documentElement.setAttribute("data-theme", autoTheme);
+        } else if (storedTheme === "dim" || storedTheme === "nord") {
+            document.documentElement.setAttribute("data-theme", storedTheme);
+        }
+    }
+
+    import { themeKeys } from "../../utils/theme";
+
+    themeKeys.forEach((value) => {
+        // Sélectionne tous les éléments avec ce suffixe
+        const dropDownValues = document.querySelectorAll(
+            `[id$="dropdown-item-${value.key}"]`,
+        );
+        dropDownValues.forEach((dropDownValue) => {
+            dropDownValue.addEventListener("click", (event) => {
+                event.preventDefault();
+                applyTheme(value.key);
+            });
+        });
+    });
+
+    function applyTheme(theme: string) {
+        if (typeof window === "undefined") return;
+        if (theme.toLowerCase() === "auto") {
+            const prefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
+            const autoTheme = prefersDark ? "dim" : "nord";
+            document.documentElement.setAttribute("data-theme", autoTheme);
+            localStorage.setItem("theme", "auto");
+        } else if (theme.toLowerCase() === "dark") {
+            document.documentElement.setAttribute("data-theme", "dim");
+            localStorage.setItem("theme", "dim");
+        } else if (theme.toLowerCase() === "light") {
+            document.documentElement.setAttribute("data-theme", "nord");
+            localStorage.setItem("theme", "nord");
+        }
+         if (document.activeElement) {
+             (document.activeElement as HTMLElement).blur();
+         }
+    }
+</script>

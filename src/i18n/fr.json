@@ -1,11 +1,22 @@
 {
     "nav": {
-        "home": "Sport Track Merger",
         "blog": "Blog",
         "faq": "FAQ",
         "changelog": "Changelog",
         "contact": "Contact",
-        "privacy": "Confidentialité"
+        "privacy": "Confidentialité",
+        "theme": "Thème",
+        "themes": [
+            {
+                "label": "Auto"
+            },
+            {
+                "label": "Sombre"
+            },
+            {
+                "label": "Clair"
+            }
+        ]
     },
     "footer": {
         "copyright": "© {year} Sport Track Merger - Tous droits réservés"

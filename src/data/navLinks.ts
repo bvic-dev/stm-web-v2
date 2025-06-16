@@ -2,10 +2,8 @@ import StravaLogo from "../assets/strava.svg";
 import FacebookLogo from "../assets/facebook.svg";
 import InstagramLogo from "../assets/instagram.svg";
 import DiscordLogo from "../assets/discord.svg";
-import { getRelativeLocaleUrl } from 'astro:i18n';
 
 export const headerNavRoutes = [
-  { key: "home", href: "/" },
   { key: "blog", href: "blog" },
   { key: "faq", href: "faq" },
   { key: "changelog", href: "changelog" },

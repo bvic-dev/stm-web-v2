@@ -7,6 +7,10 @@ import { socialNavRoutes } from "../../data/navLinks";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 // Props
+interface Props {
+  currentLocale: string;
+}
+
 const { currentLocale } = Astro.props;
 
 const t = await import(`../../i18n/${currentLocale}.json`);

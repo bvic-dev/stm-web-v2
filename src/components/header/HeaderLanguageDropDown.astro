@@ -1,0 +1,17 @@
+---
+import HeaderDropDown from "./HeaderDropDown.astro";
+
+const values=["Work", "In", "Progress"];
+---
+
+<HeaderDropDown title="Language">
+    {
+            values.map((value, index) => (
+                <li>
+                    <a href="#" id={`dropdown-item-${index}`}>
+                        {value}
+                    </a>
+                </li>
+            ))
+        }
+</HeaderDropDown>

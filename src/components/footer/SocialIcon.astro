@@ -1,4 +1,11 @@
 ---
+interface Props {
+    href: string;
+    icon: any;
+    size?: number;
+    ariaLabel?: string;
+}
+
 const { href, icon: Icon, size = 30, ariaLabel } = Astro.props;
 ---
 
