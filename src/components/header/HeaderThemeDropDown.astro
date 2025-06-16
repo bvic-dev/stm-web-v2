@@ -1,6 +1,6 @@
 ---
 import HeaderDropDown from "./HeaderDropDown.astro";
-import { themeKeys } from "../../utils/theme";
+import { THEME } from "../../config.ts";
 
 interface Props {
     currentLocale: string;
@@ -12,7 +12,7 @@ const translations = await import(`../../i18n/${currentLocale}.json`);
 
 const themeValues = translations.nav.themes.map(
     (value: { label: string }, index: number) => ({
-        key: themeKeys[index].key,
+        key: THEME[index].key,
         label: value.label,
     }),
 );
@@ -42,9 +42,9 @@ const themeValues = translations.nav.themes.map(
         }
     }
 
-    import { themeKeys } from "../../utils/theme";
+    import { THEME } from "../../config.ts";
 
-    themeKeys.forEach((value) => {
+    THEME.forEach((value) => {
         // Sélectionne tous les éléments avec ce suffixe
         const dropDownValues = document.querySelectorAll(
             `[id$="dropdown-item-${value.key}"]`,
@@ -73,8 +73,8 @@ const themeValues = translations.nav.themes.map(
             document.documentElement.setAttribute("data-theme", "nord");
             localStorage.setItem("theme", "nord");
         }
-         if (document.activeElement) {
-             (document.activeElement as HTMLElement).blur();
-         }
+        if (document.activeElement) {
+            (document.activeElement as HTMLElement).blur();
+        }
     }
 </script>

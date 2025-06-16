@@ -8,13 +8,25 @@
         "theme": "Theme",
         "themes": [
             {
-                "label": "Auto"
+                "label": "💻​ Auto"
             },
             {
-                "label": "Dark"
+                "label": "🌙​ Dark"
             },
             {
-                "label": "Light"
+                "label": "☀️​ Light"
+            }
+        ],
+        "language": "Language",
+        "languages": [
+            {
+                "label": "🇬🇧 English"
+            },
+            {
+                "label": "🇫🇷 Français"
+            },
+            {
+                "label": "🇩🇪 Deutsch"
             }
         ]
     },

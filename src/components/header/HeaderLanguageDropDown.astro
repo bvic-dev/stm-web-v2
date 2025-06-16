@@ -1,17 +1,72 @@
 ---
 import HeaderDropDown from "./HeaderDropDown.astro";
+import { LOCALES } from "../../config.ts";
 
-const values=["Work", "In", "Progress"];
+interface Props {
+    currentLocale: string;
+    prefix: string;
+}
+
+const { currentLocale, prefix } = Astro.props;
+const translations = await import(`../../i18n/${currentLocale}.json`);
+
+const languagesValues = translations.nav.languages.map(
+    (value: { label: string }, index: number) => ({
+        key: LOCALES[index].key,
+        label: value.label,
+    }),
+);
 ---
 
-<HeaderDropDown title="Language">
+<HeaderDropDown title={translations.nav.language}>
     {
-            values.map((value, index) => (
-                <li>
-                    <a href="#" id={`dropdown-item-${index}`}>
-                        {value}
-                    </a>
-                </li>
-            ))
-        }
+        languagesValues.map((value: { key: string; label: string }) => (
+            <li>
+                <a id={`${prefix}-dropdown-item-${value.key}`}>{value.label}</a>
+            </li>
+        ))
+    }
 </HeaderDropDown>
+
+<script>
+    import { replaceLangFromUrl, getLangFromUrl } from "../../utils/locale.ts";
+    import { LOCALES } from "../../config.ts";
+    const currentUrl = new URL(window.location.href);
+    const storedLanguage = localStorage.getItem("language");
+
+    if (typeof window !== "undefined") {
+        if (storedLanguage !== null) {
+            const currentLang = getLangFromUrl(currentUrl);
+            if (currentLang !== storedLanguage) {
+                const newPath = replaceLangFromUrl(currentUrl, storedLanguage);
+                window.location.replace(newPath.href);
+            }
+        }
+    }
+
+    LOCALES.forEach((value) => {
+        // Sélectionne tous les éléments avec ce suffixe
+        const dropDownValues = document.querySelectorAll(
+            `[id$="dropdown-item-${value.key}"]`,
+        );
+        dropDownValues.forEach((dropDownValue) => {
+            dropDownValue.addEventListener("click", (event) => {
+                event.preventDefault();
+                applyLanguage(value.key);
+            });
+        });
+    });
+
+    function applyLanguage(language: string) {
+        if (typeof window === "undefined") return;
+        const currentLang = getLangFromUrl(currentUrl);
+        if (currentLang !== language) {
+            localStorage.setItem("language", language);
+            const newPath = replaceLangFromUrl(currentUrl, language);
+            window.location.replace(newPath.href);
+        }
+        if (document.activeElement) {
+            (document.activeElement as HTMLElement).blur();
+        }
+    }
+</script>

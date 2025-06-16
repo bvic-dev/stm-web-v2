@@ -1,9 +1,9 @@
-import { LOCALES, DEFAULT_LOCALE } from "../config.ts";
+import { LOCALES_KEYS, DEFAULT_LOCALE } from "../config.ts";
 
-type Locale = typeof LOCALES[number];
+type Locale = typeof LOCALES_KEYS[number];
 
 function isValidLocale(lang: string): lang is Locale {
-  return (LOCALES as readonly string[]).includes(lang);
+  return (LOCALES_KEYS as readonly string[]).includes(lang);
 }
 
 export function getPreferredLocale(header: string | null): Locale {
@@ -31,5 +31,25 @@ export function getPreferredLocale(header: string | null): Locale {
 }
 
 export function generateLangStaticPaths() {
-  return LOCALES.map((lang) => ({ params: { lang } }));
+  return LOCALES_KEYS.map((lang) => ({ params: { lang } }));
+}
+
+export function replaceLangFromUrl(url: URL, newLang: Locale): URL {
+  const parts = url.pathname.split('/');
+  const langIdx = parts.findIndex((segment) =>
+    (LOCALES_KEYS as readonly string[]).includes(segment)
+  );
+  if (langIdx !== -1) {
+    parts[langIdx] = newLang;
+    url.pathname = parts.join('/');
+  }
+  return url;
+}
+
+export function getLangFromUrl(url: URL): Locale {
+  const parts = url.pathname.split('/');
+  const found = parts.find((segment) =>
+    (LOCALES_KEYS as readonly string[]).includes(segment)
+  );
+  return (found as Locale) ?? DEFAULT_LOCALE;
 }

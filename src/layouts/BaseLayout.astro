@@ -3,7 +3,7 @@ import "../styles/global.css";
 import Footer from "../components/footer/Footer.astro";
 import Header from "../components/header/Header.astro";
 import { getAbsoluteLocaleUrl } from "astro:i18n";
-import { LOCALES, DEFAULT_LOCALE } from "../config.ts";
+import { LOCALES_KEYS, DEFAULT_LOCALE } from "../config.ts";
 
 const currentPath = Astro.url.pathname;
 const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
@@ -24,7 +24,7 @@ const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale;
     <meta name="generator" content={Astro.generator} />
     <title>Sport Track Merger</title>
     {
-      LOCALES.map((locale) => (
+      LOCALES_KEYS.map((locale) => (
         <link
           rel="alternate"
           hreflang={locale}

@@ -3,10 +3,11 @@ import Logo from "../../assets/logo.svg";
 import MobileNavIcon from "../../assets/mobile-nav.svg";
 import CrossIcon from "../../assets/cross.svg";
 import HeaderNavLink from "./HeaderNavLink.astro";
-import { headerNavRoutes, allNavRoutes } from "../../utils/navLinks";
+import { headerNavRoutes } from "../../utils/navLinks";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import HeaderLanguageDropDown from "./HeaderLanguageDropDown.astro";
 import HeaderThemeDropDown from "./HeaderThemeDropDown.astro";
+import HeaderLanguageDropDown from "./HeaderLanguageDropDown.astro";
+import { PAGES } from "../../config";
 
 interface Props {
   currentPath: string;
@@ -20,7 +21,7 @@ const navRoutes = headerNavRoutes.map(({ key, href }) => ({
   label: translations.nav[key],
 }));
 
-const homeRoutePath = getRelativeLocaleUrl(currentLocale, allNavRoutes[0].href)
+const homeRoutePath = getRelativeLocaleUrl(currentLocale, PAGES[0].href);
 ---
 
 <header class="shadow-sm">
@@ -59,8 +60,14 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, allNavRoutes[0].href)
             ))
           }
           <div class="flex items-center justify-end">
-            <HeaderThemeDropDown currentLocale={currentLocale} prefix="mobile" />
-            <HeaderLanguageDropDown />
+            <HeaderThemeDropDown
+              currentLocale={currentLocale}
+              prefix="mobile"
+            />
+            <HeaderLanguageDropDown
+              currentLocale={currentLocale}
+              prefix="mobile"
+            />
           </div>
         </div>
       </nav>
@@ -87,8 +94,11 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, allNavRoutes[0].href)
             }
           </div>
         </div>
-        <HeaderThemeDropDown currentLocale={currentLocale} prefix="desktop"/>
-        <HeaderLanguageDropDown />
+        <HeaderThemeDropDown currentLocale={currentLocale} prefix="desktop" />
+        <HeaderLanguageDropDown
+          currentLocale={currentLocale}
+          prefix="desktop"
+        />
       </div>
     </nav>
   </div>
