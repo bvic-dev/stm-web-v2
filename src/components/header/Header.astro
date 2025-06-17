@@ -27,7 +27,7 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, PAGES[0].href);
 <header class="shadow-sm">
   <div class="w-fullpx-2 p-2 md:px-6">
     <div class="md:hidden">
-      <div class="relative flex items-center">
+      <div class="flex justify-between items-center gap-5">
         <button
           type="button"
           class="btn btn-ghost rounded-md p-2"
@@ -40,11 +40,12 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, PAGES[0].href);
 
         <a
           href={homeRoutePath}
-          class="hover-zoom-md absolute left-1/2 -translate-x-1/2 flex items-center gap-2"
+          class="hover-zoom-md"
           aria-label="Sport Track Merger Logo"
         >
           <Logo width={40} height={40} />
         </a>
+        <HeaderLanguageDropDown currentLocale={currentLocale} prefix="mobile-menu" />
       </div>
 
       <nav class="hidden" id="mobile-menu">
