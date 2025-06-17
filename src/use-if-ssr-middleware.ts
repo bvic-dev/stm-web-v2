@@ -14,10 +14,10 @@ export const userMiddleware = defineMiddleware(async (ctx, next) => {
   const response = await next();
   const { pathname, origin } = ctx.url;
   for (const route of nakedRoutes) {
-    if (normalizePath(pathname) === `${SITE_BASE}${route}`) {
+    if (normalizePath(pathname) === `/${SITE_BASE}${route}`) {
       const header = ctx.request.headers.get("accept-language");
       const preferred = getPreferredLocale(header);
-      return Response.redirect(`${origin}${SITE_BASE}/${preferred}${route}`, 302);
+      return Response.redirect(`${origin}/${SITE_BASE}/${preferred}${route}`, 302);
     }
   }
 

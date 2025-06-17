@@ -3,26 +3,45 @@ import "../styles/global.css";
 import Footer from "../components/footer/Footer.astro";
 import Header from "../components/header/Header.astro";
 import { getAbsoluteLocaleUrl } from "astro:i18n";
-import { LOCALES_KEYS, DEFAULT_LOCALE } from "../config.ts";
+import {
+  LOCALES_KEYS,
+  DEFAULT_LOCALE,
+  SITE_URL,
+} from "../config.ts";
+
+interface Props {
+  title: string;
+  description?: string;
+  shouldNoIndex: boolean;
+}
+
+const { title, description, shouldNoIndex } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
 const routePattern = Astro.routePattern;
 
-const pathWithoutLocale = routePattern.replace(
-  new RegExp(`^/${currentLocale}(?:/|$)`),
-  "",
+const safeRoutePattern = typeof routePattern === "string" ? routePattern : "";
+const pathWithoutLocale = safeRoutePattern.replace(
+  new RegExp(`^/\\[lang\\]`),
+  ""
 );
-const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale;
+const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale.replace(/\/+$/, "") || "/";
 ---
 
 <html lang={currentLocale}>
   <head>
+    <!-- 1. Charset + viewport-->
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/stm-web-v2/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Sport Track Merger</title>
+
+    <!-- 2. Title + meta SEO -->
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {shouldNoIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- 3. Canonical + hreflang -->
+    <link rel="canonical" href=`${SITE_URL}${currentPath}` />
     {
       LOCALES_KEYS.map((locale) => (
         <link
@@ -37,6 +56,10 @@ const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale;
       hreflang="x-default"
       href={getAbsoluteLocaleUrl(DEFAULT_LOCALE, relativePath)}
     />
+
+    <!-- 4. Icônes + styles -->
+    <link rel="icon" type="image/svg+xml" href="/stm-web-v2/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
   </head>
   <body class="min-h-screen flex flex-col">
     <Header currentPath={currentPath} currentLocale={currentLocale} />

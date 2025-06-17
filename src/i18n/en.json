@@ -40,6 +40,14 @@
         "discord": "Sport Track Merger on Discord"
     },
     "home": {
-        "welcome": "Welcome to Sport Track Merger"
+        "app": "Sport Track Merger",
+        "title": "Merge, group or combine your Strava activities - Sport Track Merger",
+        "description": "Mobile app for Android and iOS designed to merge, group or duplicate your Strava activities (commutes, hiking, GPS errors, multi-day, indoor).",
+        "h1": "Easily merge or group your Strava activities",
+        "h2": "Sport Track Merger lets you combine multiple Strava sessions into a single activity, whether to group commutes, fix GPS splits or merge a week-long hike.",
+        "download_ios": "Download Sport Track Merger on the App Store",
+        "download_android": "Download Sport Track Merger on Google Play",
+        "playstore_url": "https://play.google.com/store/apps/details?id=com.bvic.sporttrackmerger&hl=en",
+        "appstore_url": "https://apps.apple.com/us/app/sport-track-merger/id6736858288"
     }
 }

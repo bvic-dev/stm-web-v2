@@ -40,6 +40,14 @@
         "discord": "Sport Track Merger sur Discord"
     },
     "home": {
-        "welcome": "Bienvenue sur Sport Track Merger"
+        "app": "Sport Track Merger",
+        "title": "Fusionnez, regroupez ou combinez vos activités Strava - Sport Track Merger",
+        "description": "Application mobile pour Android et iOS conçue pour fusionner, regrouper ou dupliquer vos activités Strava (vélo taff, randonnée, bug GPS, multi-jours, indoor).",
+        "h1": "Fusionnez ou regroupez facilement vos activités Strava",
+        "h2": "Sport Track Merger vous permet de combiner plusieurs sorties Strava en une seule activité, que ce soit pour regrouper vos trajets domicile-travail, corriger un découpage GPS ou rassembler une semaine de randonnée.",
+        "download_ios": "Télécharger Sport Track Merger sur l'App Store",
+        "download_android": "Télécharger Sport Track Merger sur Google Play",
+        "playstore_url": "https://play.google.com/store/apps/details?id=com.bvic.sporttrackmerger&hl=fr",
+        "appstore_url": "https://apps.apple.com/fr/app/sport-track-merger/id6736858288"
     }
 }

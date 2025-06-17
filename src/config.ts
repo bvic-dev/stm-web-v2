@@ -7,8 +7,8 @@ export const DEFAULT_LOCALE = "en" as const;
 
 export const LOCALES_KEYS = LOCALES.map(locale => locale.key) as readonly string[];
 
-export const SITE_URL = "https://bvic-dev.github.io/" as const;
-export const SITE_BASE = "/stm-web-v2" as const;
+export const SITE_URL = "https://bvic-dev.github.io" as const;
+export const SITE_BASE = "stm-web-v2" as const;
 
 export const PAGES = [
   { key: "home", href: "/" },
