@@ -12,10 +12,10 @@ import {
 interface Props {
   title: string;
   description?: string;
-  shouldNoIndex: boolean;
+  shouldIndex: boolean;
 }
 
-const { title, description, shouldNoIndex } = Astro.props;
+const { title, description, shouldIndex } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
@@ -38,7 +38,7 @@ const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale.replace(
     <!-- 2. Title + meta SEO -->
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    {shouldNoIndex && <meta name="robots" content="noindex, nofollow" />}
+    {!shouldIndex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- 3. Canonical + hreflang -->
     <link rel="canonical" href=`${SITE_URL}${currentPath}` />
