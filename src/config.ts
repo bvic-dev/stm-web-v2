@@ -24,3 +24,6 @@ export const THEME = [
     { key: "dark", index: 1 },
     { key: "light", index: 2 },
 ] as const;
+
+export const EMAIL = "b.vic.dev@gmail.com" as const;
+export const DISCORD_URL = "https://discord.gg/22xxwbQebe" as const;

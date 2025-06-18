@@ -49,5 +49,23 @@
     "download_android": "Sport Track Merger bei Google Play herunterladen",
     "playstore_url": "https://play.google.com/store/apps/details?id=com.bvic.sporttrackmerger&hl=de",
     "appstore_url": "https://apps.apple.com/de/app/sport-track-merger/id6736858288"
+  },
+  "contact": {
+    "head": {
+      "title": "Kontakt - Sport Track Merger",
+      "description": "Kontaktieren Sie das Sport Track Merger-Team per E-Mail oder über soziale Netzwerke. Schneller Support und offen für Vorschläge."
+    },
+    "title": "Kontaktieren Sie Sport Track Merger",
+    "description": "Haben Sie eine Frage, einen Vorschlag oder ein Problem in der App festgestellt? Kontaktieren Sie uns gerne per E-Mail oder über soziale Netzwerke.",
+    "email": {
+      "title": "E-Mail",
+      "description": "Senden Sie uns eine E-Mail an",
+      "button": "b.vic.dev@gmail.com"
+    },
+    "discord": {
+      "title": "Treten Sie unserer Discord-Community bei",
+      "description": "Chatten Sie mit anderen Nutzern und erhalten Sie Hilfe in Echtzeit",
+      "button": "Discord beitreten"
+    }
   }
 }

@@ -1,14 +1,50 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { generateLangStaticPaths } from '../../../utils/locale';
+import ContactSection from "../../../components/contact/ContactSection.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { generateLangStaticPaths } from "../../../utils/locale";
+import MailIcon from "../../../assets/mail.svg";
+import DiscordLogo from "../../../assets/discord.svg";
+import { DISCORD_URL, EMAIL } from "../../../config";
+
+const { lang } = Astro.params;
+const translation = await import(`../../../i18n/${lang}.json`);
 
 export function getStaticPaths() {
   return generateLangStaticPaths();
 }
-
 ---
-<BaseLayout>
-  <p class="flex h-100 items-center justify-center text-4xl font-bold">
-    Contact
-  </p>
+
+<BaseLayout
+  title={translation.contact.head.title}
+  description={translation.contact.head.description}
+  shouldIndex={true}
+>
+  <main
+    class="max-w-4xl w-full mx-auto flex flex-col items-center justify-center py-20 gap-4 px-4 text-center"
+  >
+    <h1 class="text-3xl font-bold mb-4">{translation.contact.title}</h1>
+    <p class="mb-6">
+      {translation.contact.description}
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <ContactSection
+        title={translation.contact.email.title}
+        description={translation.contact.email.description}
+        buttonText={translation.contact.email.button}
+        buttonLink=`mailto:${EMAIL}`
+        ButtonIcon={MailIcon}
+        buttonIconClass="stroke-2"
+      />
+
+      <ContactSection
+        title={translation.contact.discord.title}
+        description={translation.contact.discord.description}
+        buttonText={translation.contact.discord.button}
+        buttonLink={DISCORD_URL}
+        ButtonIcon={DiscordLogo}
+        buttonIconClass="fill-current"
+      />
+    </div>
+  </main>
 </BaseLayout>
