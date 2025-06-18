@@ -27,3 +27,6 @@ export const THEME = [
 
 export const EMAIL = "b.vic.dev@gmail.com" as const;
 export const DISCORD_URL = "https://discord.gg/22xxwbQebe" as const;
+export const STRAVA_URL = "https://www.strava.com/clubs/sporttrackmerger" as const;
+export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61576930135105" as const;
+export const INSTAGRAM_URL = "https://www.instagram.com/sporttrackmerger" as const;
