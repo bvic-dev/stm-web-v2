@@ -1,0 +1,31 @@
+# Allow all user agents (search engines) to crawl the site
+User-agent: *
+
+# Block indexing
+Disallow: /auth/strava/callback/
+Disallow: /en/auth/strava/callback/
+Disallow: /fr/auth/strava/callback/
+Disallow: /de/auth/strava/callback/
+
+Disallow: /mobile/cgu/
+Disallow: /en/mobile/cgu/
+Disallow: /fr/mobile/cgu/
+Disallow: /de/mobile/cgu/
+
+Disallow: /mobile/cgv/
+Disallow: /en/mobile/cgv/
+Disallow: /fr/mobile/cgv/
+Disallow: /de/mobile/cgv/
+
+Disallow: /mobile/privacy/
+Disallow: /en/mobile/privacy/
+Disallow: /fr/mobile/privacy/
+Disallow: /de/mobile/privacy/
+
+Disallow: /
+Disallow: /contact/
+
+# Allow everything else
+Allow: /
+
+Sitemap: https://www.sporttrackmerger.com/sitemap-index.xml

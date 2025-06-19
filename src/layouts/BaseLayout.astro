@@ -3,11 +3,7 @@ import "../styles/global.css";
 import Footer from "../components/footer/Footer.astro";
 import Header from "../components/header/Header.astro";
 import { getAbsoluteLocaleUrl } from "astro:i18n";
-import {
-  LOCALES_KEYS,
-  DEFAULT_LOCALE,
-  SITE_URL,
-} from "../config.ts";
+import { LOCALES_KEYS, DEFAULT_LOCALE, SITE_URL } from "../config.ts";
 
 interface Props {
   title: string;
@@ -24,9 +20,10 @@ const routePattern = Astro.routePattern;
 const safeRoutePattern = typeof routePattern === "string" ? routePattern : "";
 const pathWithoutLocale = safeRoutePattern.replace(
   new RegExp(`^/\\[lang\\]`),
-  ""
+  "",
 );
-const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale.replace(/\/+$/, "") || "/";
+const relativePath =
+  pathWithoutLocale === "" ? "/" : pathWithoutLocale.replace(/\/+$/, "") || "/";
 ---
 
 <html lang={currentLocale}>
@@ -56,6 +53,7 @@ const relativePath = pathWithoutLocale === "" ? "/" : pathWithoutLocale.replace(
       hreflang="x-default"
       href={getAbsoluteLocaleUrl(DEFAULT_LOCALE, relativePath)}
     />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- 4. Icônes + styles -->
     <link rel="icon" type="image/svg+xml" href="/stm-web-v2/favicon.svg" />

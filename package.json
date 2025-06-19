@@ -10,6 +10,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/ts-plugin": "^1.10.4",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.2",
