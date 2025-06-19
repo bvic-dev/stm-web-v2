@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { generateLangStaticPaths } from "../../utils/locale";
 import StmLogo from "../../assets/logo.svg";
-import { Image } from "astro:assets";
+import StoreBadges from "../../components/StoreBadges.astro";
 
 export function getStaticPaths() {
   return generateLangStaticPaths();
@@ -10,11 +10,6 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const translation = await import(`../../i18n/${lang}.json`);
-const AppleLogo = (await import(`../../assets/badges/${lang}/ios_badge.svg`))
-  .default;
-const googleLogo = (
-  await import(`../../assets/badges/${lang}/google_badge.png`)
-).default;
 ---
 
 <BaseLayout
@@ -33,30 +28,6 @@ const googleLogo = (
     <h2 class="text-lg md:text-xl">
       {translation.home.h2}
     </h2>
-    <div
-      class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10"
-    >
-      <a
-        href={translation.home.appstore_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover-zoom-sm"
-      >
-        <AppleLogo height={54} width={170.79} alt={translation.home.download_ios} />
-      </a>
-      <a
-        href={translation.home.playstore_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover-zoom-sm"
-      >
-        <Image
-          height={54}
-
-          src={googleLogo}
-          alt={translation.home.download_android}
-        />
-      </a>
-    </div>
+    <StoreBadges lang={lang} logoSize="large" />
   </div>
 </BaseLayout>

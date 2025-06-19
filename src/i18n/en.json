@@ -44,7 +44,9 @@
         "title": "Merge, group or combine your Strava activities - Sport Track Merger",
         "description": "Mobile app for Android and iOS designed to merge, group or duplicate your Strava activities (commutes, hiking, GPS errors, multi-day, indoor).",
         "h1": "Easily merge or group your Strava activities",
-        "h2": "Sport Track Merger lets you combine multiple Strava sessions into a single activity, whether to group commutes, fix GPS splits or merge a week-long hike.",
+        "h2": "Sport Track Merger lets you combine multiple Strava sessions into a single activity, whether to group commutes, fix GPS splits or merge a week-long hike."
+    },
+    "storeBadges": {
         "download_ios": "Download Sport Track Merger on the App Store",
         "download_android": "Download Sport Track Merger on Google Play",
         "playstore_url": "https://play.google.com/store/apps/details?id=com.bvic.sporttrackmerger&hl=en",
@@ -73,6 +75,33 @@
             "cgu": "Terms of Service",
             "privacy": "Privacy Policy",
             "cgv": "Terms of Sale"
+        }
+    },
+    "auth": {
+        "strava": {
+            "callback": {
+                "head": {
+                    "title": "Redirection after Strava login – Sport Track Merger",
+                    "description": "This page is designed to automatically open the Sport Track Merger app after your Strava login. If you see it, follow the instructions to fix the redirection behavior."
+                },
+                "title": "🧭 Did you arrive here by mistake?",
+                "description": "This page is designed to automatically open the Sport Track Merger app after your Strava login. If you see it, no worries: here’s how to fix it.",
+                "reason1": {
+                    "title": "📱 The app is not installed",
+                    "text": "This is often the simplest reason. To open this page automatically in the app, make sure it is installed on your device.",
+                    "button": "Try to open the app again",
+                    "retryError": "Unable to open the app. Please check your installation."
+                },
+                "reason2": {
+                    "title": "⚙️ Links are not opening in the app",
+                    "text": "Even if the app is installed, your device might not yet recognize the links as meant to be opened with Sport Track Merger.",
+                    "howToFix": "To fix this:",
+                    "steps": [
+                        "Check that the app is properly installed.",
+                        "Go to: Settings > Apps > Sport Track Merger > Open by default > Add a link > Enable www.sporttrackmerger.com"
+                    ]
+                }
+            }
         }
     }
 }

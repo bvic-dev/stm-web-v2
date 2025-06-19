@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { generateLangStaticPaths } from "../../../../utils/locale";
+import StoreBadges from "../../../../components/StoreBadges.astro";
+
+const { lang } = Astro.params;
+const translation = await import(`../../../../i18n/${lang}.json`);
+const steps: string[] = translation.auth.strava.callback.reason2.steps;
+
+export function getStaticPaths() {
+    return generateLangStaticPaths();
+}
+
+const currentUrl = new URL(Astro.request.url);
+const langRegex = new RegExp(`/${lang}(?=/)`);
+const cleanedPathname = currentUrl.pathname.replace(langRegex, "");
+const path = `${currentUrl.host}${cleanedPathname}${currentUrl.search}`;
+const hasParams = currentUrl.search.length > 0;
+const deeplinkUrl = `sporttrackmerger://${path}${hasParams ? "" : "?error=missing_param"}`;
+---
+
+<BaseLayout
+    title={translation.auth.strava.callback.head.title}
+    description={translation.auth.strava.callback.head.description}
+    shouldIndex={false}
+>
+    <div
+        class="max-w-4xl w-full mx-auto flex flex-col items-center justify-center
+    py-20 gap-4 px-4 text-center"
+    >
+        <h1 class="text-3xl font-bold mb-4">
+            {translation.auth.strava.callback.title}
+        </h1>
+        <p class="mb-6">
+            {translation.auth.strava.callback.description}
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <section
+                class="bg-base-200 rounded-xl p-8 shadow-lg flex flex-col items-center gap-6"
+            >
+                <h2 class="text-lg font-semibold">
+                    {translation.auth.strava.callback.reason1.title}
+                </h2>
+                <p class="text-center">
+                    {translation.auth.strava.callback.reason1.text}
+                </p>
+                <StoreBadges lang={lang} logoSize="small" />
+                <a
+                    id="strava-deeplink"
+                    href={deeplinkUrl}
+                    class="btn btn-primary font-semibold text-sm"
+                >
+                    {translation.auth.strava.callback.reason1.button}
+                </a>
+                <p
+                    id="error-message"
+                    class="text-sm text-error text-center hidden"
+                >
+                    {translation.auth.strava.callback.reason1.retryError}
+                </p>
+            </section>
+
+            <section
+                class="bg-base-200 rounded-xl p-8 shadow-lg flex flex-col items-center gap-4"
+            >
+                <h2 class="text-lg font-semibold">
+                    {translation.auth.strava.callback.reason2.title}
+                </h2>
+                <p class="text-center">
+                    {translation.auth.strava.callback.reason2.text}
+                </p>
+                <div class="font-semibold text-center">
+                    {translation.auth.strava.callback.reason2.howToFix}
+                </div>
+                <ol class="space-y-2">
+                    {
+                        steps.map((step, idx) => (
+                            <li class="flex items-center gap-2">
+                                <span class="inline-block bg-primary text-primary-content rounded-full px-2 py-1 text-xs font-bold">
+                                    {idx + 1}
+                                </span>
+                                <span class="text-xs text-left">{step}</span>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </section>
+        </div>
+    </div>
+</BaseLayout>
+
+<script>
+    const deeplinkButton = document.getElementById("strava-deeplink");
+    const errorMessage = document.getElementById("error-message");
+    if (deeplinkButton && errorMessage) {
+        deeplinkButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            setTimeout(() => {
+                errorMessage.classList.remove("hidden");
+                setTimeout(() => {
+                    errorMessage.classList.add("hidden");
+                }, 5000);
+            }, 2000);
+        });
+    }
+</script>
