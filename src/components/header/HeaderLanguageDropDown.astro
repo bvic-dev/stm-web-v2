@@ -10,12 +10,13 @@ interface Props {
 const { currentLocale, prefix } = Astro.props;
 const translations = await import(`../../i18n/${currentLocale}.json`);
 
-const languagesValues = translations.nav.languages.map(
-    (value: { label: string }, index: number) => ({
-        key: LOCALES[index].key,
-        label: value.label,
-    }),
-);
+const languagesValues = [
+    { key: "auto", label: translations.nav.languages[0].label },
+    ...LOCALES.map((locale) => ({
+        key: locale.key,
+        label: translations.nav.languages[locale.index]?.label,
+    })),
+];
 ---
 
 <HeaderDropDown title={translations.nav.language}>
@@ -29,23 +30,36 @@ const languagesValues = translations.nav.languages.map(
 </HeaderDropDown>
 
 <script>
-    import { replaceLangFromUrl, getLangFromUrl } from "../../utils/locale.ts";
+    import {
+        replaceLangFromUrl,
+        getLangFromUrl,
+        getNavigatorLocale,
+    } from "../../utils/locale.ts";
     import { LOCALES } from "../../config.ts";
     const currentUrl = new URL(window.location.href);
     const storedLanguage = localStorage.getItem("language");
+    const navigatorLanguage = getNavigatorLocale(navigator.language);
+    const currentLang = getLangFromUrl(currentUrl);
 
     if (typeof window !== "undefined") {
-        if (storedLanguage !== null) {
-            const currentLang = getLangFromUrl(currentUrl);
+        if (storedLanguage !== null && storedLanguage !== "auto") {
             if (currentLang !== storedLanguage) {
                 const newPath = replaceLangFromUrl(currentUrl, storedLanguage);
+                window.location.replace(newPath.href);
+            }
+        } else {
+            if (currentLang !== navigatorLanguage) {
+                const newPath = replaceLangFromUrl(
+                    currentUrl,
+                    navigatorLanguage,
+                );
                 window.location.replace(newPath.href);
             }
         }
     }
 
-    LOCALES.forEach((value) => {
-        // Sélectionne tous les éléments avec ce suffixe
+    const localesWithAuto = [...LOCALES, { key: "auto" }];
+    localesWithAuto.forEach((value) => {
         const dropDownValues = document.querySelectorAll(
             `[id$="dropdown-item-${value.key}"]`,
         );
@@ -57,16 +71,21 @@ const languagesValues = translations.nav.languages.map(
         });
     });
 
-    function applyLanguage(language: string) {
-        if (typeof window === "undefined") return;
-        const currentLang = getLangFromUrl(currentUrl);
-        if (currentLang !== language) {
-            localStorage.setItem("language", language);
-            const newPath = replaceLangFromUrl(currentUrl, language);
-            window.location.replace(newPath.href);
-        }
-        if (document.activeElement) {
-            (document.activeElement as HTMLElement).blur();
+    function applyLanguage(key: string) {
+        localStorage.setItem("language", key);
+        if (key === "auto") {
+            const navigatorLang = getNavigatorLocale(navigator.language);
+            if (currentLang !== navigatorLang) {
+                window.location.replace(
+                    replaceLangFromUrl(currentUrl, navigatorLang).href,
+                );
+            }
+        } else {
+            if (currentLang !== key) {
+                window.location.replace(
+                    replaceLangFromUrl(currentUrl, key).href,
+                );
+            }
         }
     }
 </script>
