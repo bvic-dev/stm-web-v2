@@ -1,5 +1,5 @@
 ---
-const { SITE_BASE, DEFAULT_LOCALE } = await import("../config.ts");
+const { DEFAULT_LOCALE } = await import("../config.ts");
 
 interface Props {
   path?: string;
@@ -7,8 +7,8 @@ interface Props {
 
 const { path } = Astro.props;
 const redirectUrl = path
-  ? `/${SITE_BASE}/${DEFAULT_LOCALE}/${path.replace(/^\/+/, "")}/`
-  : `/${SITE_BASE}/${DEFAULT_LOCALE}/`;
+  ? `/${DEFAULT_LOCALE}/${path.replace(/^\/+/, "")}/`
+  : `/${DEFAULT_LOCALE}/`;
 ---
 
 <html lang={DEFAULT_LOCALE}>

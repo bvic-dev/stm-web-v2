@@ -1,6 +1,6 @@
 
 import { defineConfig } from 'astro/config';
-const { LOCALES_KEYS, DEFAULT_LOCALE, SITE_URL, SITE_BASE } = await import('./src/config.ts');
+const { LOCALES_KEYS, DEFAULT_LOCALE, SITE_URL } = await import('./src/config.ts');
 
 const LOCALES_DICT = Object.fromEntries(
   LOCALES_KEYS.map(key => [key, key])
@@ -13,7 +13,6 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  base: SITE_BASE,
 
   vite: {
     plugins: [tailwindcss()]
@@ -30,24 +29,24 @@ export default defineConfig({
 
   integrations: [sitemap({
     filter: (page) =>
-      page !== SITE_URL + '/' + SITE_BASE + '/auth/strava/callback/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/en/auth/strava/callback/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/fr/auth/strava/callback/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/de/auth/strava/callback/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/mobile/cgu/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/en/mobile/cgu/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/fr/mobile/cgu/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/de/mobile/cgu/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/mobile/cgv/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/en/mobile/cgv/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/fr/mobile/cgv/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/de/mobile/cgv/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/mobile/privacy/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/en/mobile/privacy/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/fr/mobile/privacy/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/de/mobile/privacy/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/' &&
-      page !== SITE_URL + '/' + SITE_BASE + '/contact/',
+      page !== SITE_URL + '/auth/strava/callback/' &&
+      page !== SITE_URL + '/en/auth/strava/callback/' &&
+      page !== SITE_URL + '/fr/auth/strava/callback/' &&
+      page !== SITE_URL + '/de/auth/strava/callback/' &&
+      page !== SITE_URL + '/mobile/cgu/' &&
+      page !== SITE_URL + '/en/mobile/cgu/' &&
+      page !== SITE_URL + '/fr/mobile/cgu/' &&
+      page !== SITE_URL + '/de/mobile/cgu/' &&
+      page !== SITE_URL + '/mobile/cgv/' &&
+      page !== SITE_URL + '/en/mobile/cgv/' &&
+      page !== SITE_URL + '/fr/mobile/cgv/' &&
+      page !== SITE_URL + '/de/mobile/cgv/' &&
+      page !== SITE_URL + '/mobile/privacy/' &&
+      page !== SITE_URL + '/en/mobile/privacy/' &&
+      page !== SITE_URL + '/fr/mobile/privacy/' &&
+      page !== SITE_URL + '/de/mobile/privacy/' &&
+      page !== SITE_URL + '/' &&
+      page !== SITE_URL + '/contact/',
     i18n: {
       defaultLocale: DEFAULT_LOCALE,
       locales: LOCALES_DICT,
