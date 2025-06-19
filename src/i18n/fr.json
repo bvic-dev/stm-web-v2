@@ -67,5 +67,12 @@
             "description": "Discutez avec d'autres utilisateurs et recevez de l'aide en temps réel",
             "button": "Rejoindre Discord"
         }
+    },
+    "mobile": {
+        "legal": {
+            "cgu": "Conditions Générales d'Utilisation",
+            "privacy": "Politique de Confidentialité",
+            "cgv": "Conditions Générales de Vente"
+        }
     }
 }

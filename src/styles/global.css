@@ -4,7 +4,6 @@
   themes: nord --default, dim --prefersdark;
 }
 
-
 @plugin "daisyui/theme" {
   name: "dim";
   default: false;
@@ -75,6 +74,9 @@
   --depth: 0;
   --noise: 0;
 }
+
+@plugin '@tailwindcss/typography';
+
 
 .hover-zoom-md {
   @apply hover:opacity-90 transition-all duration-300 transform hover:scale-110;

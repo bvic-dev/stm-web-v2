@@ -1,0 +1,14 @@
+---
+import Legal from '../../../components/mobile/legal.astro';
+import { generateLangStaticPaths } from '../../../utils/locale';
+
+const { lang } = Astro.params;
+
+export function getStaticPaths() {
+  return generateLangStaticPaths();
+}
+
+const cgv = await import(`../../../content/${lang}/mobile/cgv.md`);
+---
+
+<Legal legalMd={cgv} currentLocale={lang}/>

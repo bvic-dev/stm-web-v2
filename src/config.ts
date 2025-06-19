@@ -19,6 +19,12 @@ export const PAGES = [
   { key: "privacy", href: "privacy" },
 ];
 
+export const LEGAL_MOBILE_PAGES = [
+  { key: "privacy", href: "mobile/privacy" },
+  { key: "cgu", href: "mobile/cgu" },
+  { key: "cgv", href: "mobile/cgv" },
+]
+
 export const THEME = [
     { key: "auto", index: 0 },
     { key: "dark", index: 1 },

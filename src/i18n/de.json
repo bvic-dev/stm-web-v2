@@ -67,5 +67,12 @@
       "description": "Chatten Sie mit anderen Nutzern und erhalten Sie Hilfe in Echtzeit",
       "button": "Discord beitreten"
     }
+  },
+  "mobile": {
+    "legal": {
+      "cgu": "Nutzungsbedingungen",
+      "privacy": "Datenschutzerklärung",
+      "cgv": "Verkaufsbedingungen"
+    }
   }
 }

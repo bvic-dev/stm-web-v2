@@ -2,11 +2,13 @@ import StravaLogo from "../assets/strava.svg";
 import FacebookLogo from "../assets/facebook.svg";
 import InstagramLogo from "../assets/instagram.svg";
 import DiscordLogo from "../assets/discord.svg";
-import { PAGES, STRAVA_URL, FACEBOOK_URL, INSTAGRAM_URL, DISCORD_URL } from "../config";
+import { PAGES, STRAVA_URL, FACEBOOK_URL, INSTAGRAM_URL, DISCORD_URL, LEGAL_MOBILE_PAGES } from "../config";
 
 export const headerNavRoutes = PAGES.filter(route => route.key !== "home" && route.key !== "privacy");
 
 export const footerNavRoutes = PAGES.filter(route => route.key !== "home");
+
+export const legalMobileNavRoutes = LEGAL_MOBILE_PAGES
 
 export const socialNavRoutes = [
   { key: "strava", href: STRAVA_URL, icon: StravaLogo },
