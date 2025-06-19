@@ -4,7 +4,6 @@ head: {
     description: "Allgemeine Nutzungsbedingungen der App Sport Track Merger"
 }
 title: "Allgemeine Nutzungsbedingungen (AGB)"
-key: 'cgu'
 ---
 
 **Letzte Aktualisierung: 19.06.2025**

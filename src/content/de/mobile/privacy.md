@@ -4,7 +4,6 @@ head: {
     description: "Datenschutzerklärung der App Sport Track Merger"
 }
 title: 'Datenschutzerklärung'
-key: 'privacy'
 ---
 
 **Letzte Aktualisierung: 19.06.2025**

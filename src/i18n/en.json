@@ -1,10 +1,6 @@
 {
     "nav": {
-        "blog": "Blog",
-        "faq": "FAQ",
-        "changelog": "Changelog",
         "contact": "Contact",
-        "privacy": "Privacy",
         "theme": "Theme",
         "themes": [
             {
@@ -75,9 +71,9 @@
     },
     "mobile": {
         "legal": {
-            "cgu": "Terms of Service",
-            "privacy": "Privacy Policy",
-            "cgv": "Terms of Sale"
+            "mobile-cgu": "Terms of Service",
+            "mobile-privacy": "Privacy Policy",
+            "mobile-cgv": "Terms of Sale"
         }
     },
     "auth": {

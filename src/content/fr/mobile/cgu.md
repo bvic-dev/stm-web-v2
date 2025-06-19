@@ -4,7 +4,6 @@ head: {
     description: "Conditions générales d'utilisation de l'application Sport Track Merger"
 }
 title: "Conditions Générales d'Utilisation (CGU)"
-key: 'cgu'
 ---
 
 **Dernière mise à jour : 19/06/2025**

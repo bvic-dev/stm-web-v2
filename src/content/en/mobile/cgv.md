@@ -4,7 +4,6 @@ head: {
     description: "Terms of Sale for the Sport Track Merger application"
 }
 title: 'Terms of Sale (ToS)'
-key: 'cgv'
 ---
 
 **Last updated: 06/19/2025**

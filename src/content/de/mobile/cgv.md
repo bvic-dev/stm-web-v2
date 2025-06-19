@@ -4,7 +4,6 @@ head: {
     description: "Allgemeine Verkaufsbedingungen der App Sport Track Merger"
 }
 title: 'Allgemeine Verkaufsbedingungen (AGB)'
-key: 'cgv'
 ---
 
 **Letzte Aktualisierung: 19.06.2025**

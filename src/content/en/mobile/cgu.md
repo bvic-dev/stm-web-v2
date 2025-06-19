@@ -4,7 +4,6 @@ head: {
     description: "Terms of service of the Sport Track Merger application"
 }
 title: "Terms of Service (ToS)"
-key: 'cgu'
 ---
 
 **Last updated: 06/19/2025**

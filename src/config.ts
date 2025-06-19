@@ -1,7 +1,7 @@
 export const LOCALES = [
-    { key: "en", index: 1 },
-    { key: "fr", index: 2 },
-    { key: "de", index: 3 },
+  { key: "en", index: 1 },
+  { key: "fr", index: 2 },
+  { key: "de", index: 3 },
 ] as const;
 export const DEFAULT_LOCALE = "en" as const;
 export const LOCALES_KEYS = LOCALES.map(locale => locale.key) as readonly string[];
@@ -11,23 +11,19 @@ export const SITE_BASE = "stm-web-v2" as const;
 
 export const PAGES = [
   { key: "home", href: "/" },
-  { key: "blog", href: "blog" },
-  { key: "faq", href: "faq" },
-  { key: "changelog", href: "changelog" },
   { key: "contact", href: "contact" },
-  { key: "privacy", href: "privacy" },
 ];
 
 export const LEGAL_MOBILE_PAGES = [
-  { key: "privacy", href: "mobile/privacy" },
-  { key: "cgu", href: "mobile/cgu" },
-  { key: "cgv", href: "mobile/cgv" },
+  { key: "mobile-privacy", href: "mobile/privacy" },
+  { key: "mobile-cgu", href: "mobile/cgu" },
+  { key: "mobile-cgv", href: "mobile/cgv" },
 ]
 
 export const THEME = [
-    { key: "auto", index: 0 },
-    { key: "dark", index: 1 },
-    { key: "light", index: 2 },
+  { key: "auto", index: 0 },
+  { key: "dark", index: 1 },
+  { key: "light", index: 2 },
 ] as const;
 
 export const EMAIL = "b.vic.dev@gmail.com" as const;

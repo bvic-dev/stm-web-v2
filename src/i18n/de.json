@@ -1,10 +1,6 @@
 {
   "nav": {
-    "blog": "Blog",
-    "faq": "FAQ",
-    "changelog": "Changelog",
     "contact": "Kontakt",
-    "privacy": "Datenschutz",
     "theme": "Thema",
     "themes": [
       {
@@ -75,9 +71,9 @@
   },
   "mobile": {
     "legal": {
-      "cgu": "Nutzungsbedingungen",
-      "privacy": "Datenschutzerklärung",
-      "cgv": "Verkaufsbedingungen"
+      "mobile-cgu": "Nutzungsbedingungen",
+      "mobile-privacy": "Datenschutzerklärung",
+      "mobile-cgv": "Verkaufsbedingungen"
     }
   },
   "auth": {

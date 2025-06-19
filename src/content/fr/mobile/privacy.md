@@ -4,7 +4,6 @@ head: {
     description: "Politique de Confidentialité de l'application Sport Track Merger"
 }
 title: 'Politique de Confidentialité'
-key: 'privacy'
 ---
 
 **Dernière mise à jour : 19/06/2025**

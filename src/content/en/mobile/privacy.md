@@ -4,7 +4,6 @@ head: {
     description: "Privacy Policy of the Sport Track Merger application"
 }
 title: 'Privacy Policy'
-key: 'privacy'
 ---
 
 **Last updated: 06/19/2025**

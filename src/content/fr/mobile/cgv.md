@@ -4,7 +4,6 @@ head: {
     description: "Conditions Générales de Vente de l'application Sport Track Merger"
 }
 title: 'Conditions Générales de Vente (CGV)'
-key: 'cgv'
 ---
 
 **Dernière mise à jour : 19/06/2025**
