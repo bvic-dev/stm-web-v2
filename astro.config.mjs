@@ -45,6 +45,7 @@ export default defineConfig({
       page !== SITE_URL + '/en/mobile/privacy/' &&
       page !== SITE_URL + '/fr/mobile/privacy/' &&
       page !== SITE_URL + '/de/mobile/privacy/' &&
+      page !== SITE_URL + '/privacy/' &&
       page !== SITE_URL + '/' &&
       page !== SITE_URL + '/contact/',
     i18n: {

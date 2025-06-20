@@ -22,6 +22,8 @@ Disallow: /en/mobile/privacy/
 Disallow: /fr/mobile/privacy/
 Disallow: /de/mobile/privacy/
 
+Disallow: /privacy/
+
 Disallow: /
 Disallow: /contact/
 
