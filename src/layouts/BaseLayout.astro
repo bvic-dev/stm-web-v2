@@ -9,9 +9,15 @@ interface Props {
   title: string;
   description?: string;
   shouldIndex: boolean;
+  showSportTrackMergerLogo?: boolean;
 }
 
-const { title, description, shouldIndex } = Astro.props;
+const {
+  title,
+  description,
+  shouldIndex,
+  showSportTrackMergerLogo = true,
+} = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
@@ -60,7 +66,11 @@ const relativePath =
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="min-h-screen flex flex-col">
-    <Header currentPath={currentPath} currentLocale={currentLocale} />
+    <Header
+      currentPath={currentPath}
+      currentLocale={currentLocale}
+      showSportTrackMergerLogo={showSportTrackMergerLogo}
+    />
     <main class="flex-1 overflow-auto">
       <slot />
     </main>

@@ -12,9 +12,14 @@ import { PAGES } from "../../config";
 interface Props {
   currentPath: string;
   currentLocale: string;
+  showSportTrackMergerLogo?: boolean;
 }
 
-const { currentPath, currentLocale } = Astro.props;
+const {
+  currentPath,
+  currentLocale,
+  showSportTrackMergerLogo = true,
+} = Astro.props;
 const translations = await import(`../../i18n/${currentLocale}.json`);
 const navRoutes = headerNavRoutes.map(({ key, href }) => ({
   href: getRelativeLocaleUrl(currentLocale, href),
@@ -38,14 +43,21 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, PAGES[0].href);
           <CrossIcon width={24} height={24} class="hidden" />
         </button>
 
-        <a
-          href={homeRoutePath}
-          class="hover-zoom-md"
-          aria-label="Sport Track Merger Logo"
-        >
-          <Logo width={40} height={40} />
-        </a>
-        <HeaderLanguageDropDown currentLocale={currentLocale} prefix="mobile-menu" />
+        {
+          showSportTrackMergerLogo && (
+            <a
+              href={homeRoutePath}
+              class="hover-zoom-md"
+              aria-label="Sport Track Merger Logo"
+            >
+              <Logo width={40} height={40} />
+            </a>
+          )
+        }
+        <HeaderLanguageDropDown
+          currentLocale={currentLocale}
+          prefix="mobile-menu"
+        />
       </div>
 
       <nav class="hidden" id="mobile-menu">

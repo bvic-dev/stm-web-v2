@@ -4,7 +4,7 @@ import InstagramLogo from "../assets/instagram.svg";
 import DiscordLogo from "../assets/discord.svg";
 import { PAGES, STRAVA_URL, FACEBOOK_URL, INSTAGRAM_URL, DISCORD_URL, LEGAL_MOBILE_PAGES } from "../config";
 
-export const headerNavRoutes = PAGES.filter(route => route.key !== "home");
+export const headerNavRoutes = PAGES;
 
 export const footerNavRoutes = PAGES.filter(route => route.key !== "home");
 
