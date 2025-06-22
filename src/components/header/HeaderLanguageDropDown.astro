@@ -30,6 +30,7 @@ const languagesValues = LOCALES.map((locale) => ({
     import {
         replaceLangFromUrl,
         getLangFromUrl,
+        isValidLocale
     } from "../../utils/locale.ts";
     import { LOCALES } from "../../config.ts";
     const currentUrl = new URL(window.location.href);
@@ -37,7 +38,7 @@ const languagesValues = LOCALES.map((locale) => ({
     const currentLang = getLangFromUrl(currentUrl);
 
     if (typeof window !== "undefined") {
-        if (storedLanguage !== null) {
+        if (storedLanguage !== null && isValidLocale(storedLanguage)) {
             if (currentLang !== storedLanguage) {
                 const newPath = replaceLangFromUrl(currentUrl, storedLanguage);
                 window.location.replace(newPath.href);

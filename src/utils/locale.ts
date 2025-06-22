@@ -2,7 +2,7 @@ import { LOCALES_KEYS, DEFAULT_LOCALE } from "../config.ts";
 
 type Locale = typeof LOCALES_KEYS[number];
 
-function isValidLocale(lang: string): lang is Locale {
+export function isValidLocale(lang: string): lang is Locale {
   return (LOCALES_KEYS as readonly string[]).includes(lang);
 }
 
