@@ -17,15 +17,11 @@ Disallow: /en/mobile/cgv/
 Disallow: /fr/mobile/cgv/
 Disallow: /de/mobile/cgv/
 
+Disallow: /privacy/
 Disallow: /mobile/privacy/
 Disallow: /en/mobile/privacy/
 Disallow: /fr/mobile/privacy/
 Disallow: /de/mobile/privacy/
-
-Disallow: /privacy/
-
-Disallow: /
-Disallow: /contact/
 
 # Allow everything else
 Allow: /
