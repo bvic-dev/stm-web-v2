@@ -10,13 +10,6 @@ const steps: string[] = translation.auth.strava.callback.reason2.steps;
 export function getStaticPaths() {
     return generateLangStaticPaths();
 }
-
-const currentUrl = new URL(Astro.request.url);
-const langRegex = new RegExp(`/${lang}(?=/)`);
-const cleanedPathname = currentUrl.pathname.replace(langRegex, "");
-const path = `${currentUrl.host}${cleanedPathname}${currentUrl.search}`;
-const hasParams = currentUrl.search.length > 0;
-const deeplinkUrl = `sporttrackmerger://${path}${hasParams ? "" : "?error=missing_param"}`;
 ---
 
 <BaseLayout
@@ -48,7 +41,7 @@ const deeplinkUrl = `sporttrackmerger://${path}${hasParams ? "" : "?error=missin
                 <StoreBadges lang={lang} logoSize="small" />
                 <a
                     id="strava-deeplink"
-                    href={deeplinkUrl}
+                    href="#"
                     class="btn btn-primary font-semibold text-sm"
                 >
                     {translation.auth.strava.callback.reason1.button}
@@ -96,6 +89,18 @@ const deeplinkUrl = `sporttrackmerger://${path}${hasParams ? "" : "?error=missin
     if (deeplinkButton && errorMessage) {
         deeplinkButton.addEventListener("click", (event) => {
             event.preventDefault();
+            const langMatch = window.location.pathname.match(/^\/[a-z]{2}(\/.*)$/);
+            const pathWithoutLang = langMatch
+                ? langMatch[1]
+                : window.location.pathname;
+
+            const deeplinkUrl =
+                "sporttrackmerger://" +
+                window.location.host +
+                pathWithoutLang +
+                (window.location.search || "?error=missing_param");
+            console.log("Deeplink URL:", deeplinkUrl);
+            window.location.href = deeplinkUrl;
             setTimeout(() => {
                 errorMessage.classList.remove("hidden");
                 setTimeout(() => {

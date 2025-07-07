@@ -3,9 +3,10 @@ const { DEFAULT_LOCALE } = await import("../config.ts");
 
 interface Props {
   path?: string;
+  redirectWithQuery?: boolean;
 }
 
-const { path } = Astro.props;
+const { path, redirectWithQuery = false } = Astro.props;
 const redirectUrl = path
   ? `/${DEFAULT_LOCALE}/${path.replace(/^\/+/, "")}/`
   : `/${DEFAULT_LOCALE}/`;
@@ -13,13 +14,23 @@ const redirectUrl = path
 
 <html lang={DEFAULT_LOCALE}>
   <head>
-    <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />
+    {
+      redirectWithQuery && (
+        <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />
+      )
+    }
     <meta name="robots" content="noindex, nofollow" />
-    <title>Redirecting…</title>
+    <title>Redirecting...</title>
   </head>
   <body>
     <p>Redirecting to <a href={redirectUrl}>{redirectUrl}</a></p>
   </body>
 </html>
 
-<script set:html={`window.location.replace("${redirectUrl}");`}></script>
+<script>
+  const { DEFAULT_LOCALE } = await import("../config.ts");
+  const path = window.location.pathname.replace(/^\/+/, "");
+  const query = window.location.search;
+  const redirectUrl = `/${DEFAULT_LOCALE}/${path}${query}`;
+  window.location.replace(redirectUrl);
+</script>
