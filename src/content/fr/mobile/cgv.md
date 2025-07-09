@@ -7,7 +7,9 @@ title: 'Conditions Générales de Vente (CGV)'
 ---
 
 **Dernière mise à jour : 19/06/2025**
+
 ## 1. Informations légales
+
 L'application **Sport Track Merger** est éditée par :
 
 **Bily Victorien**  

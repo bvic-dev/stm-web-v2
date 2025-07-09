@@ -33,7 +33,7 @@ Sie ermöglicht es, bestehende Strava-Aktivitäten zusammenzuführen oder zu dup
 - Die Unterstützung von **Outdoor- und Indoor-Aktivitäten**
 - Für Nutzer der **Pro-Version**: **vollständige Bearbeitung** der neuen Aktivitätsdaten (Titel, Beschreibung, Aktivitätstyp, verwendetes Gerät, Bewegungsstatus)
 
-Die App ist auf **Französisch**, **Englisch**, **Deutsch** verfügbar und kann in Zukunft in weitere Sprachen übersetzt werden.
+Die App ist auf **Französisch**, **Englisch**, **Deutsch**, **Spanisch** verfügbar und kann in Zukunft in weitere Sprachen übersetzt werden.
 
 ## 3. Zugangs- und Nutzungsbedingungen
 

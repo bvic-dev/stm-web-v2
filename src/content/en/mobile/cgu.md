@@ -33,7 +33,7 @@ It allows you to merge or duplicate your existing Strava activities and send the
 - Support for **outdoor and indoor** activities
 - For **Pro version** users: **full editing** of the new activity's data (title, description, type, device used, movement status)
 
-The application is available in **French**, **English**, **German**, and may be translated into other languages in the future.
+The application is available in **French**, **English**, **German**, **Spanish** and may be translated into other languages in the future.
 
 ## 3. Access and usage conditions
 
