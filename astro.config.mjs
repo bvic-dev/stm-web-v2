@@ -50,7 +50,6 @@ export default defineConfig({
       page !== SITE_URL + '/de/mobile/privacy/' &&
       page !== SITE_URL + '/es/mobile/privacy/' &&
       page !== SITE_URL + '/privacy/' &&
-      page !== SITE_URL + '/' &&
       page !== SITE_URL + '/contact/',
     i18n: {
       defaultLocale: DEFAULT_LOCALE,

@@ -4,9 +4,10 @@ const { DEFAULT_LOCALE } = await import("../config.ts");
 interface Props {
   path?: string;
   redirectWithQuery?: boolean;
+  noindex?: boolean;
 }
 
-const { path, redirectWithQuery = false } = Astro.props;
+const { path, redirectWithQuery = false, noindex = true } = Astro.props;
 const redirectUrl = path
   ? `/${DEFAULT_LOCALE}/${path.replace(/^\/+/, "")}/`
   : `/${DEFAULT_LOCALE}/`;
@@ -14,12 +15,20 @@ const redirectUrl = path
 
 <html lang={DEFAULT_LOCALE}>
   <head>
+    <!-- 1. Charset + viewport-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- 2. Icônes + styles -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
     {
       redirectWithQuery && (
         <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />
       )
     }
-    <meta name="robots" content="noindex, nofollow" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <title>Redirecting...</title>
   </head>
   <body>
