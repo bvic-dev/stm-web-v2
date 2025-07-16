@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StmLogo from "../assets/logo.svg";
 import StoreBadges from "../components/StoreBadges.astro";
+import { SITE_URL, DEFAULT_LOCALE } from "../config.ts";
 
 const translation = await import("../i18n/en.json");
 ---
@@ -11,6 +12,7 @@ const translation = await import("../i18n/en.json");
   description={translation.home.description}
   shouldIndex={true}
   showSportTrackMergerLogo={false}
+  canonicalUrl={[SITE_URL, DEFAULT_LOCALE, ""].join("/")}
 >
   <div
     class="max-w-4xl w-full mx-auto flex flex-col items-center justify-center py-20 gap-8 px-4 text-center"

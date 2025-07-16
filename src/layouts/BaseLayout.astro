@@ -9,17 +9,11 @@ interface Props {
   title: string;
   description?: string;
   shouldIndex: boolean;
+  canonicalUrl?: string;
   showSportTrackMergerLogo?: boolean;
 }
 
-const {
-  title,
-  description,
-  shouldIndex,
-  showSportTrackMergerLogo = true,
-} = Astro.props;
-
-const currentPath = Astro.url.pathname;
+const currentUrlPath = Astro.url.pathname;
 const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
 const routePattern = Astro.routePattern;
 
@@ -30,6 +24,14 @@ const pathWithoutLocale = safeRoutePattern.replace(
 );
 const relativePath =
   pathWithoutLocale === "" ? "/" : pathWithoutLocale.replace(/\/+$/, "") || "/";
+
+const {
+  title,
+  description,
+  shouldIndex,
+  canonicalUrl = SITE_URL + currentUrlPath,
+  showSportTrackMergerLogo = true,
+} = Astro.props;
 ---
 
 <html lang={currentLocale}>
@@ -44,7 +46,7 @@ const relativePath =
     {!shouldIndex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- 3. Canonical + hreflang -->
-    <link rel="canonical" href=`${SITE_URL}${currentPath}` />
+    <link rel="canonical" href={`${canonicalUrl}`} />
     {
       LOCALES_KEYS.map((locale) => (
         <link
@@ -67,7 +69,7 @@ const relativePath =
   </head>
   <body class="min-h-screen flex flex-col">
     <Header
-      currentPath={currentPath}
+      currentUrlPath={currentUrlPath}
       currentLocale={currentLocale}
       showSportTrackMergerLogo={showSportTrackMergerLogo}
     />

@@ -10,13 +10,13 @@ import HeaderLanguageDropDown from "./HeaderLanguageDropDown.astro";
 import { PAGES } from "../../config";
 
 interface Props {
-  currentPath: string;
+  currentUrlPath: string;
   currentLocale: string;
   showSportTrackMergerLogo?: boolean;
 }
 
 const {
-  currentPath,
+  currentUrlPath,
   currentLocale,
   showSportTrackMergerLogo = true,
 } = Astro.props;
@@ -67,7 +67,7 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, PAGES[0].href);
               <HeaderNavLink
                 href={link.href}
                 label={link.label}
-                currentPath={currentPath}
+                currentPath={currentUrlPath}
                 className="flex items-center justify-start"
               />
             ))
@@ -101,7 +101,7 @@ const homeRoutePath = getRelativeLocaleUrl(currentLocale, PAGES[0].href);
                 <HeaderNavLink
                   href={link.href}
                   label={link.label}
-                  currentPath={currentPath}
+                  currentPath={currentUrlPath}
                 />
               ))
             }
