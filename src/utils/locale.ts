@@ -19,14 +19,18 @@ export function generateLangStaticPaths() {
 }
 
 export function replaceLangFromUrl(url: URL, newLang: Locale): URL {
-  const parts = url.pathname.split('/');
+  const parts = url.pathname.split('/').filter(Boolean);
   const langIdx = parts.findIndex((segment) =>
     (LOCALES_KEYS as readonly string[]).includes(segment)
   );
+
   if (langIdx !== -1) {
     parts[langIdx] = newLang;
-    url.pathname = parts.join('/');
+  } else {
+    parts.unshift(newLang);
   }
+
+  url.pathname = '/' + parts.join('/');
   return url;
 }
 

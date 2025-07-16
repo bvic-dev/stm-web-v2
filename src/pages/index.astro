@@ -1,5 +1,28 @@
 ---
-import Redirect from "../layouts/RedirectLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StmLogo from "../assets/logo.svg";
+import StoreBadges from "../components/StoreBadges.astro";
+
+const translation = await import("../i18n/en.json");
 ---
 
-<Redirect noindex={false} />
+<BaseLayout
+  title={translation.home.title}
+  description={translation.home.description}
+  shouldIndex={true}
+  showSportTrackMergerLogo={false}
+>
+  <div
+    class="max-w-4xl w-full mx-auto flex flex-col items-center justify-center py-20 gap-8 px-4 text-center"
+  >
+    <StmLogo class="h-22 w-22 md:h-32 md:w-32" />
+    <p class="text-2xl md:text-3xl font-bold">{translation.home.app}</p>
+    <h1 class="text-xl md:text-2xl font-bold">
+      {translation.home.h1}
+    </h1>
+    <h2 class="text-lg md:text-xl">
+      {translation.home.h2}
+    </h2>
+    <StoreBadges lang="en" logoSize="large" />
+  </div>
+</BaseLayout>
