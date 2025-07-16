@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { generateLangStaticPaths } from "../../../utils/locale";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { allNavRoutes } from "../../../utils/navLinks";
+
+export function getStaticPaths() {
+    return generateLangStaticPaths();
+}
+
+const { lang } = Astro.params;
+const translation = await import(`../../../i18n/${lang}.json`);
+const faqs = translation.faq.questions;
+
+const faqSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item: { question: string; answer: string }) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+        },
+    })),
+});
+
+const contactRoute = getRelativeLocaleUrl(
+    lang,
+    allNavRoutes.find((route) => route.key === "contact")?.href,
+);
+---
+
+<BaseLayout
+    title={translation.faq.head.title}
+    description={translation.faq.head.description}
+    shouldIndex={true}
+>
+    <Fragment slot="header">
+        <script type="application/ld+json" set:html={faqSchema} />
+    </Fragment>
+
+    <div
+        class="max-w-4xl w-full mx-auto flex flex-col items-center justify-center py-20 gap-4 px-4 text-center"
+    >
+        <h1 class="text-3xl font-bold mb-4">{translation.faq.title}</h1>
+        <p class="text-sl mb-6">{translation.faq.description}</p>
+
+        <div class="w-full text-left">
+            <div class="join join-vertical w-full">
+                {
+                    faqs.map(
+                        (
+                            faq: { question: String; answer: String },
+                            idx: number,
+                        ) => (
+                            <div class="collapse collapse-arrow join-item border border-base-300">
+                                <input type="checkbox" name={`faq-${idx}`} />
+                                <div class="collapse-title text-md font-medium">
+                                    {faq.question}
+                                </div>
+                                <div class="collapse-content text-sm text-base-content">
+                                    <p>{faq.answer}</p>
+                                </div>
+                            </div>
+                        ),
+                    )
+                }
+            </div>
+        </div>
+
+        <p class="text-sl mt-10 text-sm text-center">
+            {translation.faq.footer}
+            <a href={contactRoute} class="link link-primary underline">
+                {translation.faq.contactUs}
+            </a>
+        </p>
+    </div>
+</BaseLayout>

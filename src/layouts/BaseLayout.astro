@@ -66,6 +66,9 @@ const {
     <!-- 4. Icônes + styles -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- 5. Custom -->
+    <slot name="header" />
   </head>
   <body class="min-h-screen flex flex-col">
     <Header

@@ -12,6 +12,7 @@ export const SITE_URL = "https://www.sporttrackmerger.com" as const;
 export const PAGES = [
   { key: "home", href: "/" },
   { key: "contact", href: "contact" },
+  { key: "faq", href: "faq" },
 ];
 
 export const LEGAL_MOBILE_PAGES = [

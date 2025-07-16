@@ -3,6 +3,7 @@
         "home": "Sport Track Merger",
         "contact": "Contact",
         "theme": "Thème",
+        "faq": "FAQ",
         "themes": [
             {
                 "label": "💻​ Auto"
@@ -103,5 +104,69 @@
                 }
             }
         }
+    },
+    "faq": {
+        "head": {
+            "title": "FAQ – Sport Track Merger",
+            "description": "Vous avez une question sur l'application Sport Track Merger ? Voici les réponses aux questions les plus fréquentes concernant la fusion ou duplication d'activités Strava."
+        },
+        "title": "FAQ",
+        "description": "Voici les questions les plus fréquemment posées par les utilisateurs.",
+        "footer": "Vous ne trouvez pas la réponse à votre question ?",
+        "contactUs": "Contactez-nous",
+        "questions": [
+            {
+                "question": "À quoi sert Sport Track Merger ?",
+                "answer": "L'application permet de fusionner ou de dupliquer des activités Strava pour corriger un bug GPS, regrouper des trajets domicile-travail, ou combiner plusieurs jours d'aventure en une seule activité."
+            },
+            {
+                "question": "Quelle est la différence entre la version gratuite et la version Pro ?",
+                "answer": "La version gratuite permet de fusionner jusqu’à 2 activités, deux fois par jour. La version Pro offre des fusions illimitées, la personnalisation complète (titre, description, type d’activité, etc.) et l’accès à plus que les 50 dernières activités."
+            },
+            {
+                "question": "Est-ce que j’ai besoin d’une carte bancaire pour activer la version d’essai ?",
+                "answer": "Non, la version d’essai est entièrement gratuite et ne nécessite pas de carte bancaire. Elle peut être activée directement dans l’application."
+            },
+            {
+                "question": "Je change de téléphone, vais-je perdre la version Pro ?",
+                "answer": "Non, votre achat Pro est lié à votre compte Strava. Il suffit de vous reconnecter avec le même compte pour retrouver vos avantages Pro sans frais supplémentaires."
+            },
+            {
+                "question": "Puis-je fusionner une activité avec le GPS d'un côté et la fréquence cardiaque de l'autre ?",
+                "answer": "Oui, Sport Track Merger permet de fusionner des activités qui se chevauchent dans le temps, par exemple pour combiner des données GPS avec celles d’un capteur de fréquence cardiaque ou de puissance."
+            },
+            {
+                "question": "Comment fonctionne la duplication d'activité ?",
+                "answer": "Vous pouvez dupliquer une activité existante en choisissant une nouvelle date et heure. Cela permet par exemple de corriger un mauvais enregistrement."
+            },
+            {
+                "question": "Est-ce que je peux récupérer mon fichier GPX ou TCX après fusion ?",
+                "answer": "L'application supprime automatiquement les fichiers GPX ou TCX du téléphone après la fusion pour ne pas encombrer votre stockage. Mais vous pouvez toujours exporter l’activité fusionnée depuis Strava."
+            },
+            {
+                "question": "Pourquoi mon activité fusionnée a plus de kilomètres que la somme des activités d'origine ?",
+                "answer": "Si les points de fin et de départ de vos activités fusionnées ne coïncident pas, Strava ajoute automatiquement une distance entre ces points. Une solution est en cours de développement pour corriger ce comportement."
+            },
+            {
+                "question": "Pourquoi mon activité fusionnée est en \"Entraînement\" sur Strava ?",
+                "answer": "La version gratuite ne permet pas de modifier le type d’activité. En version Pro, le type d’activité est automatiquement défini selon les activités fusionnées."
+            },
+            {
+                "question": "Sur ma nouvelle activité Strava, mes \"PRs\" restent incorrects, que faire ?",
+                "answer": "Assurez-vous d’avoir supprimé les anciennes activités Strava après la fusion. Si les \"PRs\" restent incorrects, cliquez sur \"Recalculer les performances\" dans l’application Strava."
+            },
+            {
+                "question": "Pourquoi l'application demande-t-elle un accès à mes activités Strava ?",
+                "answer": "L'application a besoin d’accéder à vos activités Strava pour les lire, les fusionner et en créer de nouvelles. Aucune donnée n’est envoyée à un serveur externe : tout est géré localement sur votre appareil."
+            },
+            {
+                "question": "Comment sont gérées mes données personnelles ?",
+                "answer": "Vos données sont traitées localement sur votre téléphone. Aucune activité n’est stockée sur un serveur externe. Vous pouvez consulter notre politique de confidentialité pour plus de détails."
+            },
+            {
+                "question": "Comment changer la langue de l'application, le thème, les unités ou le format des dates ?",
+                "answer": "Ces paramètres sont disponibles dans les réglages de l’application. Cliquez sur votre photo de profil pour y accéder."
+            }
+        ]
     }
 }

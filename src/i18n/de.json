@@ -3,6 +3,7 @@
     "home": "Sport Track Merger",
     "contact": "Kontakt",
     "theme": "Thema",
+    "faq": "FAQ",
     "themes": [
       {
         "label": "💻​ Auto"
@@ -103,5 +104,69 @@
         }
       }
     }
+  },
+  "faq": {
+    "head": {
+      "title": "FAQ – Sport Track Merger",
+      "description": "Hast du eine Frage zur App Sport Track Merger? Hier findest du Antworten auf die häufigsten Fragen zur Zusammenführung oder Duplizierung von Strava-Aktivitäten."
+    },
+    "title": "FAQ",
+    "description": "Hier findest du die am häufigsten gestellten Fragen von Nutzer:innen.",
+    "footer": "Du findest keine passende Antwort auf deine Frage?",
+    "contactUs": "Kontaktiere uns",
+    "questions": [
+      {
+        "question": "Wofür ist Sport Track Merger gedacht?",
+        "answer": "Die App ermöglicht es, Strava-Aktivitäten zu verschmelzen oder zu duplizieren – zum Beispiel um GPS-Fehler zu korrigieren, Arbeitswege zu gruppieren oder mehrtägige Touren in einer Aktivität zusammenzufassen."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen der kostenlosen Version und der Pro-Version?",
+        "answer": "Die kostenlose Version erlaubt das Zusammenführen von bis zu 2 Aktivitäten, zweimal täglich. Die Pro-Version bietet unbegrenzte Fusionen, vollständige Personalisierung (Titel, Beschreibung, Aktivitätstyp etc.) und Zugriff auf mehr als die letzten 50 Aktivitäten."
+      },
+      {
+        "question": "Brauche ich eine Kreditkarte für die Testversion?",
+        "answer": "Nein, die Testversion ist völlig kostenlos und erfordert keine Kreditkarte. Du kannst sie direkt in der App aktivieren."
+      },
+      {
+        "question": "Ich wechsle mein Smartphone. Verliere ich die Pro-Version?",
+        "answer": "Nein, dein Pro-Kauf ist mit deinem Strava-Konto verknüpft. Sobald du dich mit demselben Konto anmeldest, wird die Pro-Version automatisch wiederhergestellt – ohne zusätzliche Kosten."
+      },
+      {
+        "question": "Kann ich eine Aktivität mit GPS-Daten und eine mit Herzfrequenzdaten zusammenführen?",
+        "answer": "Ja, Sport Track Merger kann Aktivitäten mit überlappender Zeit kombinieren – z. B. GPS-Daten mit Herzfrequenz- oder Leistungsdaten."
+      },
+      {
+        "question": "Wie funktioniert das Duplizieren einer Aktivität?",
+        "answer": "Du kannst eine vorhandene Aktivität duplizieren, indem du ein neues Datum und eine neue Uhrzeit auswählst – zum Beispiel, um einen Aufzeichnungsfehler zu korrigieren."
+      },
+      {
+        "question": "Kann ich meine GPX- oder TCX-Datei nach dem Zusammenführen wiederherstellen?",
+        "answer": "Die App löscht GPX- und TCX-Dateien automatisch nach dem Zusammenführen vom Gerät, um Speicherplatz zu sparen. Du kannst die zusammengeführte Aktivität aber jederzeit aus Strava exportieren."
+      },
+      {
+        "question": "Warum zeigt meine zusammengeführte Aktivität mehr Kilometer als die Summe der Originale?",
+        "answer": "Wenn Start- und Endpunkt der Aktivitäten nicht übereinstimmen, fügt Strava automatisch eine Strecke zwischen diesen hinzu. Eine Lösung dafür ist in Arbeit."
+      },
+      {
+        "question": "Warum wird meine zusammengeführte Aktivität in Strava als 'Training' angezeigt?",
+        "answer": "In der kostenlosen Version kann der Aktivitätstyp nicht geändert werden. In der Pro-Version wird der Typ automatisch anhand der kombinierten Aktivitäten festgelegt."
+      },
+      {
+        "question": "Meine neue Strava-Aktivität zeigt falsche Bestzeiten (PRs). Was tun?",
+        "answer": "Stelle sicher, dass du die Originalaktivitäten nach dem Zusammenführen gelöscht hast. Wenn die PRs weiterhin nicht stimmen, klicke in Strava auf „Leistungen neu berechnen“."
+      },
+      {
+        "question": "Warum verlangt die App Zugriff auf meine Strava-Aktivitäten?",
+        "answer": "Die App benötigt Zugriff, um deine Aktivitäten zu lesen, zusammenzuführen und neue zu erstellen. Es werden keine Daten an externe Server gesendet – alles läuft lokal auf deinem Gerät."
+      },
+      {
+        "question": "Wie werden meine persönlichen Daten verarbeitet?",
+        "answer": "Deine Daten werden lokal auf deinem Gerät verarbeitet. Es werden keine Aktivitäten auf externen Servern gespeichert. Details findest du in unserer Datenschutzerklärung."
+      },
+      {
+        "question": "Wie kann ich Sprache, Thema, Einheiten oder Datumsformat ändern?",
+        "answer": "Diese Einstellungen findest du im Menü der App. Tippe auf dein Profilbild, um sie zu öffnen."
+      }
+    ]
   }
 }
