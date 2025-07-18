@@ -30,21 +30,10 @@ const languagesValues = LOCALES.map((locale) => ({
     import {
         replaceLangFromUrl,
         getLangFromUrl,
-        isValidLocale
     } from "../../utils/locale.ts";
     import { LOCALES } from "../../config.ts";
     const currentUrl = new URL(window.location.href);
-    const storedLanguage = localStorage.getItem("language");
     const currentLang = getLangFromUrl(currentUrl);
-
-    if (typeof window !== "undefined") {
-        if (storedLanguage !== null && isValidLocale(storedLanguage)) {
-            if (currentLang !== storedLanguage) {
-                const newPath = replaceLangFromUrl(currentUrl, storedLanguage);
-                window.location.replace(newPath.href);
-            }
-        }
-    }
 
     LOCALES.forEach((value) => {
         const dropDownValues = document.querySelectorAll(
@@ -59,7 +48,6 @@ const languagesValues = LOCALES.map((locale) => ({
     });
 
     function applyLanguage(key: string) {
-        localStorage.setItem("language", key);
         if (currentLang !== key) {
             window.location.replace(replaceLangFromUrl(currentUrl, key).href);
         }
