@@ -21,3 +21,6 @@ RewriteRule ^ - [L]
 <FilesMatch "apple-app-site-association">
     ForceType application/json
 </FilesMatch>
+
+# 6. Page d'erreur 404 personnalisée
+ErrorDocument 404 /404.html
