@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StmLogo from "../assets/logo.svg";
+import { DEFAULT_LOCALE } from "../config.ts";
+
+const currentLocale = Astro.currentLocale || DEFAULT_LOCALE;
+const translation = await import(`../i18n/${currentLocale}.json`);
+---
+
+<BaseLayout
+  title={translation.notFound.head.title}
+  shouldIndex={false}
+>
+  <div class="max-w-4xl w-full mx-auto flex flex-col items-center justify-center py-20 gap-4 px-4 text-center">
+    <StmLogo class="h-22 w-22 md:h-32 md:w-32 mb-4" />
+    <h1 class="text-3xl font-bold mb-4">{translation.notFound.title}</h1>
+    <p class="mb-6">{translation.notFound.description}</p>
+    <a href={`/${currentLocale}/`} class="btn btn-primary font-semibold text-sm">
+      {translation.notFound.backToHome}
+    </a>
+  </div>
+</BaseLayout>

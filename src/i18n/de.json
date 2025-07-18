@@ -168,5 +168,13 @@
         "answer": "Diese Einstellungen findest du im Menü der App. Tippe auf dein Profilbild, um sie zu öffnen."
       }
     ]
+  },
+  "notFound": {
+    "head": {
+      "title": "Seite nicht gefunden - Sport Track Merger"
+    },
+    "title": "404 Seite nicht gefunden",
+    "description": "Entschuldigung, die gesuchte Seite existiert nicht.",
+    "backToHome": "Zur Startseite"
   }
 }

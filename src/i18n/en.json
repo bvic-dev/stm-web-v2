@@ -168,5 +168,13 @@
                 "answer": "You can change these settings in the app settings. Tap your profile picture to access them."
             }
         ]
+    },
+    "notFound": {
+        "head": {
+            "title": "Page not found - Sport Track Merger"
+        },
+        "title": "404 Page not found",
+        "description": "Sorry, we can't find the page you're looking for.",
+        "backToHome": "Back to home"
     }
 }

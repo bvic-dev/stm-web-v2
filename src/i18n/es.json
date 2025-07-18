@@ -168,5 +168,13 @@
                 "answer": "Puedes modificar estos ajustes en la configuración de la aplicación. Toca tu foto de perfil para acceder."
             }
         ]
+    },
+    "notFound": {
+        "head": {
+            "title": "Página no encontrada - Sport Track Merger"
+        },
+        "title": "404 Página no encontrada",
+        "description": "Lo sentimos, no encontramos la página que buscas.",
+        "backToHome": "Volver al inicio"
     }
 }

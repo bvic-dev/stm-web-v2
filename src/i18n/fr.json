@@ -168,5 +168,13 @@
                 "answer": "Ces paramètres sont disponibles dans les réglages de l’application. Cliquez sur votre photo de profil pour y accéder."
             }
         ]
+    },
+    "notFound": {
+        "head": {
+            "title": "Page introuvable - Sport Track Merger"
+        },
+        "title": "404 Page introuvable",
+        "description": "Désolé, nous ne trouvons pas la page que vous cherchez.",
+        "backToHome": "Retour à l'accueil"
     }
 }
