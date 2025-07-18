@@ -2,24 +2,22 @@
 import { Image } from "astro:assets";
 
 interface Props {
-  lang: string;
-  logoSize: 'small' | 'large';
+    lang: string;
+    logoSize: "small" | "large";
 }
 const { lang, logoSize } = Astro.props as Props;
 
-const logoHeight = logoSize === 'large' ? 56 : 38;
-
+const logoHeight = logoSize === "large" ? 56 : 38;
 
 const translation = await import(`../i18n/${lang}.json`);
 const AppleLogo = (await import(`../assets/badges/${lang}/ios_badge.svg`))
-  .default;
-const googleLogo = (
-  await import(`../assets/badges/${lang}/google_badge.png`)
-).default;
+    .default;
+const googleLogo = (await import(`../assets/badges/${lang}/google_badge.png`))
+    .default;
 ---
 
 <div
-    class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10"
+    class={`flex ${logoSize === "large" ? "flex-col sm:flex-row gap-5 sm:gap-10" : "flex-row gap-5 sm:gap-3"} items-center justify-center`}
 >
     <a
         href={translation.storeBadges.appstore_url}
