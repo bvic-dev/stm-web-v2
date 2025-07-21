@@ -9,15 +9,26 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^sporttrackmerger\.com$ [NC]
 RewriteRule ^ https://www.sporttrackmerger.com%{REQUEST_URI} [L,R=301]
 
-# 3. Autoriser accès direct à index.html
+# 3. Redirections vers /en par défaut pour certaines routes
+RewriteRule ^faq/?$ /en/faq/ [R=301,L]
+RewriteRule ^contact/?$ /en/contact/ [R=301,L]
+RewriteRule ^privacy/?$ /en/mobile/privacy/ [R=301,L]
+RewriteRule ^mobile/privacy/?$ /en/mobile/privacy/ [R=301,L]
+RewriteRule ^cgu/?$ /en/mobile/cgu/ [R=301,L]
+RewriteRule ^mobile/cgu/?$ /en/mobile/cgu/ [R=301,L]
+RewriteRule ^cgv/?$ /en/mobile/cgv/ [R=301,L]
+RewriteRule ^mobile/cgv/?$ /en/mobile/cgv/ [R=301,L]
+RewriteRule ^auth/strava/callback/?$ /en/auth/strava/callback/ [R=301,L]
+
+# 4. Autoriser accès direct à index.html
 RewriteRule ^index\.html$ - [L]
 
-# 4. Laisser passer les fichiers existants (pages Astro générées)
+# 5. Laisser passer les fichiers existants (pages Astro générées)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# 5. Apple AASA (si tu as un deeplink iOS)
+# 6. Apple AASA (si tu as un deeplink iOS)
 <FilesMatch "apple-app-site-association">
     ForceType application/json
 </FilesMatch>
