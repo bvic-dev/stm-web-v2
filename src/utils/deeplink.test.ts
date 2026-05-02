@@ -20,4 +20,10 @@ describe('stripLocaleFromPath', () => {
   it('returns the same path when locale is not present', () => {
     expect(stripLocaleFromPath('/auth/strava/callback', 'en')).toBe('/auth/strava/callback');
   });
+
+  it('only strips the locale when it appears as a prefix', () => {
+    // The "/en" segment in the middle of the path must NOT be stripped
+    expect(stripLocaleFromPath('/pt-pt/some/en/route', 'en')).toBe('/pt-pt/some/en/route');
+    expect(stripLocaleFromPath('/foo/en/bar', 'en')).toBe('/foo/en/bar');
+  });
 });
