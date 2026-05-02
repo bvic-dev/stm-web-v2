@@ -33,7 +33,7 @@ Permite fusionar o duplicar actividades existentes de Strava y enviar la nueva d
 - Soporte para actividades **al aire libre y en interiores**
 - Para usuarios de la **versión Pro**: **edición completa** de los datos de la nueva actividad (título, descripción, tipo de actividad, dispositivo utilizado, estado de movimiento)
 
-La aplicación está disponible en **francés**, **inglés**, **alemán**, **español** y podrá ser traducida a otros idiomas en el futuro.
+La aplicación está disponible en **francés**, **inglés**, **alemán**, **español**, **portugués** y podrá ser traducida a otros idiomas en el futuro.
 
 ## 3. Condiciones de acceso y uso
 
