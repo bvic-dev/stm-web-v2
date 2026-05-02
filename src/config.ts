@@ -3,7 +3,8 @@ export const LOCALES = [
   { key: "fr", index: 1 },
   { key: "de", index: 2 },
   { key: "es", index: 3 },
-  { key: "pt-pt", index: 4 },
+  { key: "pt", index: 4 },
+  { key: "pt-pt", index: 5 },
 ] as const;
 export const DEFAULT_LOCALE = "en" as const;
 export const LOCALES_KEYS = LOCALES.map(locale => locale.key) as readonly string[];
