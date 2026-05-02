@@ -20,6 +20,9 @@ RewriteRule ^cgv/?$ /en/mobile/cgv/ [R=301,L]
 RewriteRule ^mobile/cgv/?$ /en/mobile/cgv/ [R=301,L]
 RewriteRule ^auth/strava/callback/?$ /en/auth/strava/callback/ [R=301,L]
 
+# 3bis. Alias /sitemap.xml vers le sitemap-index Astro
+RewriteRule ^sitemap\.xml$ /sitemap-index.xml [R=301,L]
+
 # 4. Autoriser accès direct à index.html
 RewriteRule ^index\.html$ - [L]
 
