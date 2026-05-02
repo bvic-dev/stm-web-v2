@@ -33,18 +33,22 @@ export default defineConfig({
       page !== SITE_URL + '/fr/auth/strava/callback/' &&
       page !== SITE_URL + '/de/auth/strava/callback/' &&
       page !== SITE_URL + '/es/auth/strava/callback/' &&
+      page !== SITE_URL + '/pt-pt/auth/strava/callback/' &&
       page !== SITE_URL + '/en/mobile/cgu/' &&
       page !== SITE_URL + '/fr/mobile/cgu/' &&
       page !== SITE_URL + '/de/mobile/cgu/' &&
       page !== SITE_URL + '/es/mobile/cgu/' &&
+      page !== SITE_URL + '/pt-pt/mobile/cgu/' &&
       page !== SITE_URL + '/en/mobile/cgv/' &&
       page !== SITE_URL + '/fr/mobile/cgv/' &&
       page !== SITE_URL + '/de/mobile/cgv/' &&
       page !== SITE_URL + '/es/mobile/cgv/' &&
+      page !== SITE_URL + '/pt-pt/mobile/cgv/' &&
       page !== SITE_URL + '/en/mobile/privacy/' &&
       page !== SITE_URL + '/fr/mobile/privacy/' &&
       page !== SITE_URL + '/de/mobile/privacy/' &&
-      page !== SITE_URL + '/es/mobile/privacy/',
+      page !== SITE_URL + '/es/mobile/privacy/' &&
+      page !== SITE_URL + '/pt-pt/mobile/privacy/',
     i18n: {
       defaultLocale: DEFAULT_LOCALE,
       locales: LOCALES_DICT,

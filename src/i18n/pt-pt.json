@@ -1,0 +1,183 @@
+{
+    "nav": {
+        "home": "Sport Track Merger",
+        "contact": "Contacto",
+        "theme": "Tema",
+        "faq": "FAQ",
+        "themes": [
+            {
+                "label": "💻​ Auto"
+            },
+            {
+                "label": "🌙​ Escuro"
+            },
+            {
+                "label": "☀️​ Claro"
+            }
+        ],
+        "language": "Idioma",
+        "languages": [
+            {
+                "label": "🇬🇧 English"
+            },
+            {
+                "label": "🇫🇷 Français"
+            },
+            {
+                "label": "🇩🇪 Deutsch"
+            },
+            {
+                "label": "🇪🇸 Español"
+            },
+            {
+                "label": "🇵🇹 Português (Portugal)"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "© {year} Sport Track Merger - Todos os direitos reservados"
+    },
+    "social": {
+        "strava": "Sport Track Merger no Strava",
+        "facebook": "Sport Track Merger no Facebook",
+        "instagram": "Sport Track Merger no Instagram",
+        "discord": "Sport Track Merger no Discord"
+    },
+    "home": {
+        "app": "Sport Track Merger",
+        "title": "Funda, agrupe ou combine as suas atividades Strava - Sport Track Merger",
+        "description": "Aplicação móvel para Android e iOS concebida para fundir, agrupar ou duplicar as suas atividades Strava (deslocações, caminhadas, erros de GPS, vários dias, indoor).",
+        "h1": "Funda ou agrupe facilmente as suas atividades Strava",
+        "h2": "O Sport Track Merger permite-lhe combinar várias sessões Strava numa única atividade, seja para agrupar deslocações, corrigir cortes de GPS ou juntar uma semana de caminhada."
+    },
+    "storeBadges": {
+        "download_ios": "Descarregar Sport Track Merger na App Store",
+        "download_android": "Descarregar Sport Track Merger no Google Play",
+        "playstore_url": "https://play.google.com/store/apps/details?id=com.bvic.sporttrackmerger&hl=pt-PT",
+        "appstore_url": "https://apps.apple.com/pt/app/sport-track-merger/id6736858288"
+    },
+    "contact": {
+        "head": {
+            "title": "Contacto - Sport Track Merger",
+            "description": "Contacte a equipa do Sport Track Merger por e-mail ou através das redes sociais. Suporte rápido e aberto a sugestões."
+        },
+        "title": "Contacte o Sport Track Merger",
+        "description": "Tem uma pergunta, sugestão ou encontrou um problema na aplicação? Não hesite em contactar-nos por e-mail ou através das redes sociais.",
+        "email": {
+            "title": "E-mail",
+            "description": "Envie-nos um e-mail para",
+            "button": "b.vic.dev@gmail.com"
+        },
+        "discord": {
+            "title": "Junte-se à nossa comunidade no Discord",
+            "description": "Converse com outros utilizadores e receba ajuda em tempo real",
+            "button": "Entrar no Discord"
+        }
+    },
+    "mobile": {
+        "legal": {
+            "mobile-cgu": "Termos de Utilização",
+            "mobile-privacy": "Política de Privacidade",
+            "mobile-cgv": "Termos de Venda"
+        }
+    },
+    "auth": {
+        "strava": {
+            "callback": {
+                "head": {
+                    "title": "Redirecionamento após o início de sessão no Strava – Sport Track Merger",
+                    "description": "Esta página foi concebida para abrir automaticamente a aplicação Sport Track Merger após o seu início de sessão no Strava. Se a estiver a ver, siga as instruções para corrigir o comportamento de redirecionamento."
+                },
+                "title": "🧭 Chegou aqui por engano?",
+                "description": "Esta página foi concebida para abrir automaticamente a aplicação Sport Track Merger após o seu início de sessão no Strava. Se a estiver a ver, não se preocupe: eis como resolver.",
+                "reason1": {
+                    "title": "📱 A aplicação não está instalada",
+                    "text": "Esta é frequentemente a razão mais simples. Para abrir esta página automaticamente na aplicação, certifique-se de que está instalada no seu dispositivo.",
+                    "button": "Tentar abrir a aplicação novamente",
+                    "retryError": "Não foi possível abrir a aplicação. Verifique a sua instalação."
+                },
+                "reason2": {
+                    "title": "⚙️ As ligações não abrem na aplicação",
+                    "text": "Mesmo que a aplicação esteja instalada, o seu dispositivo pode ainda não reconhecer que as ligações devem ser abertas com o Sport Track Merger.",
+                    "howToFix": "Para resolver:",
+                    "steps": [
+                        "Verifique se a aplicação está corretamente instalada.",
+                        "Vá a: Definições > Aplicações > Sport Track Merger > Abrir por predefinição > Adicionar uma ligação > Ativar www.sporttrackmerger.com"
+                    ]
+                }
+            }
+        }
+    },
+    "faq": {
+        "head": {
+            "title": "FAQ – Sport Track Merger",
+            "description": "Tem uma pergunta sobre a aplicação Sport Track Merger? Aqui estão as respostas às perguntas mais frequentes sobre a fusão ou duplicação de atividades Strava."
+        },
+        "title": "FAQ",
+        "description": "Aqui estão as perguntas mais frequentes dos utilizadores.",
+        "footer": "Não encontra a resposta à sua pergunta?",
+        "contactUs": "Contacte-nos",
+        "questions": [
+            {
+                "question": "Para que serve o Sport Track Merger?",
+                "answer": "A aplicação permite-lhe fundir ou duplicar atividades Strava para corrigir um erro de GPS, agrupar deslocações ou combinar vários dias de aventura numa única atividade."
+            },
+            {
+                "question": "Qual é a diferença entre a versão gratuita e a versão Pro?",
+                "answer": "A versão gratuita permite-lhe fundir até 2 atividades, duas vezes por dia. A versão Pro oferece fusões ilimitadas, personalização completa (título, descrição, tipo de atividade, etc.) e acesso a mais do que as suas últimas 50 atividades."
+            },
+            {
+                "question": "Preciso de um cartão de crédito para ativar o período experimental?",
+                "answer": "Não, o período experimental é totalmente gratuito e não requer cartão de crédito. Pode ativá-lo diretamente na aplicação."
+            },
+            {
+                "question": "Vou mudar de telemóvel. Vou perder a minha versão Pro?",
+                "answer": "Não, a sua compra Pro está associada à sua conta Strava. Basta iniciar sessão com a mesma conta no seu novo telemóvel para restaurar o seu acesso Pro sem custos adicionais."
+            },
+            {
+                "question": "Posso fundir uma atividade com dados GPS de um lado e frequência cardíaca do outro?",
+                "answer": "Sim, o Sport Track Merger pode fundir atividades sobrepostas, por exemplo para combinar dados GPS com dados de sensores de frequência cardíaca ou potência."
+            },
+            {
+                "question": "Como funciona a duplicação de atividades?",
+                "answer": "Pode duplicar uma atividade existente escolhendo uma nova data e hora. É útil, por exemplo, para corrigir um erro de gravação."
+            },
+            {
+                "question": "Posso recuperar o meu ficheiro GPX ou TCX após a fusão?",
+                "answer": "A aplicação elimina automaticamente os ficheiros GPX ou TCX do seu telemóvel após a fusão para poupar espaço de armazenamento. No entanto, pode sempre exportar a atividade fundida a partir do Strava."
+            },
+            {
+                "question": "Porque é que a minha atividade fundida apresenta mais distância do que o total das originais?",
+                "answer": "Se os pontos final e inicial das suas atividades fundidas não coincidem, o Strava adiciona automaticamente um segmento de ligação. Está atualmente em desenvolvimento uma correção para este problema."
+            },
+            {
+                "question": "Porque é que a minha atividade fundida está marcada como 'Treino' no Strava?",
+                "answer": "A versão gratuita não permite editar o tipo de atividade. Com a versão Pro, o tipo de atividade é definido automaticamente com base nas atividades fundidas."
+            },
+            {
+                "question": "A minha nova atividade Strava mostra recordes pessoais incorretos. O que devo fazer?",
+                "answer": "Certifique-se de que eliminou as atividades originais após a fusão. Se os recordes pessoais continuarem incorretos, toque em 'Recalcular esforços' na aplicação Strava."
+            },
+            {
+                "question": "Porque é que a aplicação pede acesso às minhas atividades Strava?",
+                "answer": "A aplicação precisa de acesso às suas atividades Strava para as ler, fundir e criar novas. Nenhum dado é enviado para servidores externos — tudo é tratado localmente no seu dispositivo."
+            },
+            {
+                "question": "Como são tratados os meus dados pessoais?",
+                "answer": "Os seus dados são tratados localmente no seu dispositivo. Nenhuma atividade é armazenada em servidores externos. Consulte a nossa política de privacidade para mais informações."
+            },
+            {
+                "question": "Como posso alterar o idioma, o tema, as unidades ou o formato da data da aplicação?",
+                "answer": "Pode alterar estas definições nas configurações da aplicação. Toque na sua foto de perfil para aceder às mesmas."
+            }
+        ]
+    },
+    "notFound": {
+        "head": {
+            "title": "Página não encontrada - Sport Track Merger"
+        },
+        "title": "404 Página não encontrada",
+        "description": "Lamentamos, não conseguimos encontrar a página que procura.",
+        "backToHome": "Voltar à página inicial"
+    }
+}
