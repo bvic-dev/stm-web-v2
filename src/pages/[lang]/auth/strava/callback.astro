@@ -41,6 +41,7 @@ export function getStaticPaths() {
                 <StoreBadges lang={lang} logoSize="small" />
                 <a
                     id="strava-deeplink"
+                    data-lang={lang}
                     href="#"
                     class="btn btn-primary font-semibold text-sm"
                 >
@@ -89,9 +90,9 @@ export function getStaticPaths() {
     if (deeplinkButton && errorMessage) {
         deeplinkButton.addEventListener("click", (event) => {
             event.preventDefault();
-            const langMatch = window.location.pathname.match(/^\/[a-z]{2}(\/.*)$/);
-            const pathWithoutLang = langMatch
-                ? langMatch[1]
+            const lang = deeplinkButton.dataset.lang;
+            const pathWithoutLang = lang
+                ? window.location.pathname.replace(`/${lang}`, "")
                 : window.location.pathname;
 
             const deeplinkUrl =
