@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 interface Props {
     lang: string;
     logoSize: "small" | "large";
@@ -12,7 +10,7 @@ const logoHeight = logoSize === "large" ? 56 : 38;
 const translation = await import(`../i18n/${lang}.json`);
 const AppleLogo = (await import(`../assets/badges/${lang}/ios_badge.svg`))
     .default;
-const googleLogo = (await import(`../assets/badges/${lang}/google_badge.png`))
+const GoogleLogo = (await import(`../assets/badges/${lang}/google_badge.svg`))
     .default;
 ---
 
@@ -24,22 +22,17 @@ const googleLogo = (await import(`../assets/badges/${lang}/google_badge.png`))
         target="_blank"
         rel="noopener noreferrer"
         class="hover-zoom-sm"
+        aria-label={translation.storeBadges.download_ios}
     >
-        <AppleLogo
-            height={logoHeight}
-            alt={translation.storeBadges.download_ios}
-        />
+        <AppleLogo height={logoHeight} role="img" />
     </a>
     <a
         href={translation.storeBadges.playstore_url}
         target="_blank"
         rel="noopener noreferrer"
         class="hover-zoom-sm"
+        aria-label={translation.storeBadges.download_android}
     >
-        <Image
-            height={logoHeight}
-            src={googleLogo}
-            alt={translation.storeBadges.download_android}
-        />
+        <GoogleLogo height={logoHeight} role="img" />
     </a>
 </div>
