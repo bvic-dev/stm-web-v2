@@ -212,6 +212,21 @@ Procedure:
 
 ⚠️ These files mention GDPR. Keep the translation legally accurate.
 
+### 6.bis. Update the language list in ALL existing legal markdowns
+
+`cgu.md` section 2 ("Description of the application") contains a sentence listing the languages the app is available in (e.g. *"The application is available in **French**, **English**, **German**, **Spanish**, **Portuguese** and may be translated into other languages in the future."*).
+
+When you add a new language, this sentence must be **updated in every existing `cgu.md` file** (`en/`, `fr/`, `de/`, `es/`, `pt/`, `pt-pt/`, …) to include the new language. Easy to forget because it lives in the *body* of the markdown, not in i18n JSON.
+
+```bash
+# Sanity check: same number of bolded language items per file
+grep -c '\*\*' src/content/*/mobile/cgu.md
+```
+
+Each new language must be added in every file using that file's own language naming (endonym or exonym depending on convention used in that file — match the existing pattern).
+
+> Variants note: if the language has a generic + override (e.g. `pt` + `pt-pt`), list **one** entry covering both (e.g. just "Portuguese" / "português"), not two — the legal text describes the language, not the regional variant.
+
 ### 7. Store badges — `src/assets/badges/<key>/{google_badge.svg,ios_badge.svg}`
 
 Two SVG files per variant:
@@ -307,3 +322,4 @@ The web slug = mobile `SupportedLang.code` lowercased with a hyphen instead of a
 | URL slug `/pt_pt/` instead of `/pt-pt/` | Unexpected routes, mismatch with Remote Config | Convention: lowercase + hyphen, never underscore |
 | Web slug doesn't match mobile `SupportedLang.code` | Mobile app fetches a 404 URL from Remote Config | Web `/xx-yy/` ↔ mobile `"xx-YY"` (case difference, hyphen position is the same) |
 | Two identical picker labels | Users can't distinguish variants | When default + override coexist, both labels include the region in parentheses (`Português (Brasil)`, `Português (Portugal)`) |
+| Forgot to update the language list in ALL `cgu.md` files | Legal text in EN/FR/DE/ES still says "available in 4 languages" while PT pages list 5 → factual mismatch | Update the "available in" sentence in **every** existing `cgu.md` (section 2) to include the new language. See step 6.bis. |
