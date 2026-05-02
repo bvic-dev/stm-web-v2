@@ -63,7 +63,7 @@ First, determine if the new language has relevant regional variants (PT/BR, ZH-C
 
 ---
 
-## File modifications (8 touchpoints)
+## File modifications (9 touchpoints)
 
 ### 1. `src/config.ts` — declare the language
 
@@ -95,6 +95,19 @@ filter: (page) =>
 ```
 
 ⚠️ Without these 4 lines, the sitemap will expose legal pages and the Strava callback to Google → bad SEO + duplicate legal content across languages.
+
+### 2b. `public/robots.txt` — disallow noindex pages for the new locale
+
+Add 4 `Disallow` lines for the new locale (mirroring the existing `/en/...`, `/fr/...` entries):
+
+```
+Disallow: /<key>/auth/strava/callback/
+Disallow: /<key>/mobile/cgu/
+Disallow: /<key>/mobile/cgv/
+Disallow: /<key>/mobile/privacy/
+```
+
+⚠️ The `<meta robots="noindex,nofollow">` already on these pages prevents indexation, but `robots.txt` also blocks **crawling**, which saves crawl budget and prevents Google from spending requests discovering pages it shouldn't index. Both layers are needed for clean SEO hygiene.
 
 ### 3. `src/i18n/<key>.json` — create the translation file
 
@@ -242,6 +255,7 @@ Checks:
 | Issue | Symptom | Fix |
 |---|---|---|
 | Forgot the sitemap filter | Legal / callback pages indexed by Google | Add the 4 lines in `astro.config.mjs` |
+| Forgot the `robots.txt` Disallow lines | Google wastes crawl budget discovering noindex pages | Add 4 `Disallow` lines for the new locale in `public/robots.txt` |
 | Flag at the wrong index | Picker shows the wrong language name | Make sure `index` in `config.ts` matches the position in `nav.languages` of ALL JSON files |
 | Forgot `nav.languages` in another language | From that language, the new language doesn't appear in the picker | Add the entry at the same index in EACH existing JSON |
 | Missing markdown pages | Astro build fails (`Cannot find module ../../../content/<key>/mobile/cgu`) | Create the 3 `.md` files in `src/content/<key>/mobile/` |
