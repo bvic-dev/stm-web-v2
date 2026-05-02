@@ -85,6 +85,8 @@ export function getStaticPaths() {
 </BaseLayout>
 
 <script>
+    import { stripLocaleFromPath } from "../../../../utils/deeplink";
+
     const deeplinkButton = document.getElementById("strava-deeplink");
     const errorMessage = document.getElementById("error-message");
     if (deeplinkButton && errorMessage) {
@@ -92,7 +94,7 @@ export function getStaticPaths() {
             event.preventDefault();
             const lang = deeplinkButton.dataset.lang;
             const pathWithoutLang = lang
-                ? window.location.pathname.replace(`/${lang}`, "")
+                ? stripLocaleFromPath(window.location.pathname, lang)
                 : window.location.pathname;
 
             const deeplinkUrl =
