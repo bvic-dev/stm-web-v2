@@ -7,18 +7,21 @@ Disallow: /en/auth/strava/callback/
 Disallow: /fr/auth/strava/callback/
 Disallow: /de/auth/strava/callback/
 Disallow: /es/auth/strava/callback/
+Disallow: /pt-pt/auth/strava/callback/
 
 Disallow: /mobile/cgu/
 Disallow: /en/mobile/cgu/
 Disallow: /fr/mobile/cgu/
 Disallow: /de/mobile/cgu/
 Disallow: /es/mobile/cgu/
+Disallow: /pt-pt/mobile/cgu/
 
 Disallow: /mobile/cgv/
 Disallow: /en/mobile/cgv/
 Disallow: /fr/mobile/cgv/
 Disallow: /de/mobile/cgv/
 Disallow: /es/mobile/cgv/
+Disallow: /pt-pt/mobile/cgv/
 
 Disallow: /privacy/
 Disallow: /mobile/privacy/
@@ -26,6 +29,7 @@ Disallow: /en/mobile/privacy/
 Disallow: /fr/mobile/privacy/
 Disallow: /de/mobile/privacy/
 Disallow: /es/mobile/privacy/
+Disallow: /pt-pt/mobile/privacy/
 
 # Allow everything else
 Allow: /
