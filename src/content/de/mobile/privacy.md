@@ -6,7 +6,7 @@ head: {
 title: 'Datenschutzerklärung'
 ---
 
-**Letzte Aktualisierung: 19.06.2025**
+**Letzte Aktualisierung: 02.06.2026**
 
 ## 1. Verantwortlicher für die Datenverarbeitung
 
@@ -19,12 +19,13 @@ Unabhängiger Entwickler – Kleingewerbe
 
 ## 2. Erhobene Daten und Zweck
 
-Die App **Sport Track Merger** **erhebt keine identifizierbaren personenbezogenen Daten** des Nutzers.
+**Sport Track Merger** erhebt und speichert Ihre **personenbezogenen Daten** auf keinem Server.
 
-Daten aus der **Strava API** (Aktivitäten, Metriken, Benutzer-ID) werden ausschließlich **lokal** auf dem Telefon des Nutzers gespeichert, um die **Zusammenführung oder Duplizierung** von Aktivitäten zu ermöglichen.  
-> **Keine dieser Daten wird an einen Drittserver übermittelt**, noch vom Herausgeber gespeichert.
+**Strava-Aktivitätsdaten** (einschließlich GPS, Metriken und Ihrer Strava-Benutzer-ID) werden **ausschließlich lokal** auf Ihrem Gerät verarbeitet, nur um Aktivitäten zusammenzuführen oder zu kombinieren, und werden **niemals an den Herausgeber übermittelt oder von ihm gespeichert**.
 
 Zusammengeführte oder duplizierte Aktivitäten werden lokal erstellt und **direkt an Strava gesendet**. Die generierten Dateien werden **nach dem Senden automatisch gelöscht**.
+
+Wenn Sie Ihr Strava-Konto verbinden, kann **Strava** Nutzungsdaten in Bezug auf die Verwendung der **Strava API** durch die App überwachen und erfassen und diese für eigene Geschäftszwecke verwenden, gemäß der [Strava-Datenschutzerklärung](https://www.strava.com/legal/privacy). Die Strava-Datenschutzerklärung regelt die Verarbeitung Ihrer Daten durch Strava und **hat im Falle eines Widerspruchs Vorrang vor dieser Richtlinie**.
 
 ### Anonym erhobene Daten:
 
@@ -72,8 +73,8 @@ Die App verwendet folgende Dienste:
 - **Firebase (Google)**: Abstürze, Leistung, Analytics  
 - **RevenueCat**: Verwaltung von In-App-Käufen
 
-> RevenueCat verwendet eine **anonyme Kennung** (abgeleitet aus der gehashten Strava-ID), um eine Lizenz mit einem Nutzer zu verknüpfen.  
-> Es werden **keine identifizierbaren personenbezogenen Daten** übermittelt.
+> RevenueCat verwendet eine **pseudonymisierte Kennung** (abgeleitet aus der gehashten Strava-ID), um eine Lizenz mit einem Nutzer zu verknüpfen.  
+> Es werden **keine direkt identifizierbaren personenbezogenen Daten** übermittelt.
 
 Diese Anbieter können Daten **außerhalb der Europäischen Union** verarbeiten, unter Verwendung **standardisierter Vertragsklauseln** gemäß DSGVO.
 

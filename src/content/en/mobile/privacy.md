@@ -6,7 +6,7 @@ head: {
 title: 'Privacy Policy'
 ---
 
-**Last updated: 06/19/2025**
+**Last updated: 06/02/2026**
 
 ## 1. Data Controller
 
@@ -19,12 +19,13 @@ Independent developer – Sole proprietorship
 
 ## 2. Data Collected and Purpose
 
-The **Sport Track Merger** application **does not collect any identifiable personal data** from the user.
+**Sport Track Merger** does not collect or store your **personal data** on any server.
 
-Data from the **Strava API** (activities, metrics, user ID) is only **stored locally** on the user's phone to allow **merging or duplicating** activities.  
-> **None of this data is transmitted to a third-party server**, nor retained by the publisher.
+**Strava activity data** (including GPS, metrics and your Strava user ID) is **processed only locally** on your device, solely to merge or combine activities, and is **never transmitted to or retained by the publisher**.
 
 Merged or duplicated activities are created locally, then **sent directly to Strava**. Generated files are **automatically deleted** after sending.
+
+When you connect your Strava account, **Strava** may monitor and collect usage data related to the application's use of the **Strava API** and may use it for its own business purposes, in accordance with [Strava's Privacy Policy](https://www.strava.com/legal/privacy). Strava's Privacy Policy governs Strava's processing of your data and **prevails over this policy** in the event of any conflict.
 
 ### Anonymous data collected:
 
@@ -72,8 +73,8 @@ The app uses the following services:
 - **Firebase (Google)**: crashes, performance, analytics  
 - **RevenueCat**: in-app purchase management
 
-> RevenueCat uses an **anonymous identifier** (derived from the hashed Strava ID) to link a license to a user.  
-> No **identifiable personal data** is transmitted.
+> RevenueCat uses a **pseudonymized identifier** (derived from the hashed Strava ID) to link a license to a user.  
+> No **directly identifiable personal data** is transmitted.
 
 These providers may process data **outside the European Union**, using **standard contractual clauses** in compliance with the GDPR.
 

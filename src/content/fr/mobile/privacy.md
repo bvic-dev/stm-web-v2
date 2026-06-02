@@ -6,7 +6,7 @@ head: {
 title: 'Politique de Confidentialité'
 ---
 
-**Dernière mise à jour : 19/06/2025**
+**Dernière mise à jour : 02/06/2026**
 
 ## 1. Responsable du traitement
 
@@ -19,12 +19,13 @@ Développeur indépendant – Micro-entreprise
 
 ## 2. Données collectées et finalités
 
-L'application **Sport Track Merger** **ne collecte aucune donnée personnelle identifiable** de l'utilisateur.
+**Sport Track Merger** ne collecte ni ne stocke vos **données personnelles** sur aucun serveur.
 
-Les données provenant de l’**API Strava** (activités, métriques, ID utilisateur) sont uniquement **stockées localement** sur le téléphone de l’utilisateur pour permettre la **fusion ou duplication** d’activités.  
-> **Aucune de ces données n’est transmise à un serveur tiers**, ni conservée par l’éditeur.
+Les **données d’activité Strava** (y compris le GPS, les métriques et votre ID utilisateur Strava) sont **traitées uniquement localement** sur votre appareil, dans le seul but de fusionner ou combiner des activités, et ne sont **jamais transmises ni conservées par l’éditeur**.
 
 Les activités fusionnées ou dupliquées sont créées localement, puis **envoyées directement vers Strava**. Les fichiers générés sont **supprimés automatiquement** après envoi.
+
+Lorsque vous connectez votre compte Strava, **Strava** peut surveiller et collecter des données d’usage relatives à l’utilisation de l’**API Strava** par l’application et peut les utiliser à ses propres fins commerciales, conformément à la [Politique de confidentialité de Strava](https://www.strava.com/legal/privacy). La Politique de confidentialité de Strava régit le traitement de vos données par Strava et **prévaut sur la présente politique** en cas de conflit.
 
 ### Données anonymes collectées :
 
@@ -72,8 +73,8 @@ L'application utilise les services suivants :
 - **Firebase (Google)** : crashs, performances, analytics
 - **RevenueCat** : gestion des achats In-App
 
-> RevenueCat utilise un **identifiant anonyme** (dérivé de l'identifiant Strava, non réversible) pour associer une licence à un utilisateur.  
-> Aucune **donnée personnelle identifiable** n’est transmise.
+> RevenueCat utilise un **identifiant pseudonymisé** (dérivé de l'identifiant Strava hashé) pour associer une licence à un utilisateur.  
+> Aucune **donnée personnelle directement identifiable** n’est transmise.
 
 Ces prestataires peuvent traiter des données **hors de l'Union Européenne**, avec des **clauses contractuelles types** conformes au RGPD.
 
